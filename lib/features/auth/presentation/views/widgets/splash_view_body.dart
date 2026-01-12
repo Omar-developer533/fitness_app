@@ -10,24 +10,20 @@ class SplashViewBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(height: 150),
-        Center(
-          child: Container(
-            width: 85,
-            height: 100.6,
-            decoration: BoxDecoration(
-              color: Colors.red,
-              image: DecorationImage(
-                image: AssetImage(kLogoImage),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-        ),
-        SizedBox(height: 10),
+        Spacer(flex: 2),
+        Center(child: Image.asset(kLogoImage, height: 100.67, width: 85)),
+
         Text('Helios Sports Tech', style: Styles.boldTextStyle28),
-        Text('Here To Compete', style: Styles.mediumTextStyle16),
-        CustomButton(text: 'Get started', style: Styles.boldTextStyle16),
+        Text(
+          'Here To Compete',
+          style: Styles.mediumTextStyle16.copyWith(color: Color(0xffC0C0C0)),
+        ),
+        Spacer(flex: 4),
+        CustomButton(
+          text: 'Get started',
+          style: Styles.boldTextStyle16.copyWith(color: Colors.white),
+        ),
+        Spacer(flex: 1),
       ],
     );
   }
@@ -46,7 +42,7 @@ class CustomButton extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         gradient: LinearGradient(
-          colors: [Color(0xffFFA05C), Color(0xffF06500)],
+          colors: [buttonColorStart, buttonColorEnd],
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
         ),

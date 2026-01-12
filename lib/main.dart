@@ -1,3 +1,4 @@
+import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/app_rouer.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class FitnessApp extends StatelessWidget {
       routerConfig: AppRouer.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.blueGrey.shade900,
+        scaffoldBackgroundColor: Colors.transparent,
       ),
     );
   }
