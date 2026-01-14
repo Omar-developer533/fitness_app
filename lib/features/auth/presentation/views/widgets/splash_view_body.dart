@@ -1,9 +1,27 @@
-import 'package:fitness_app/constants.dart';
-import 'package:fitness_app/core/utls/styles.dart';
-import 'package:flutter/material.dart';
+import 'dart:math';
 
-class SplashViewBody extends StatelessWidget {
+import 'package:fitness_app/constants.dart';
+import 'package:fitness_app/core/utls/app_rouer.dart';
+import 'package:fitness_app/core/functions/linear_gradient.dart';
+import 'package:fitness_app/core/utls/styles.dart';
+import 'package:fitness_app/core/widget/custom_button.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 3), () {
+      GoRouter.of(context).go(AppRouer.kLogInView);
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,33 +38,12 @@ class SplashViewBody extends StatelessWidget {
         ),
         Spacer(flex: 4),
         CustomButton(
+          gradient: linearGradient(buttonColorStart, buttonColorEnd),
           text: 'Get started',
           style: Styles.boldTextStyle16.copyWith(color: Colors.white),
         ),
         Spacer(flex: 1),
       ],
-    );
-  }
-}
-
-class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.text, this.style});
-  final String text;
-  final TextStyle? style;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(child: Text(text, style: style)),
-      height: 50,
-      width: 343,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        gradient: LinearGradient(
-          colors: [buttonColorStart, buttonColorEnd],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
     );
   }
 }
