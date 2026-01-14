@@ -1,3 +1,6 @@
+import 'package:fitness_app/constants.dart';
+import 'package:fitness_app/core/functions/linear_gradient.dart';
+import 'package:fitness_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -5,7 +8,8 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     this.style,
-    this.gradient, this.onTap,
+    this.gradient,
+    this.onTap,
   });
   final String text;
   final TextStyle? style;
@@ -22,9 +26,12 @@ class CustomButton extends StatelessWidget {
 
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            gradient: gradient,
+            gradient:
+                gradient ?? linearGradient(buttonColorStart, buttonColorEnd),
           ),
-          child: Center(child: Text(text, style: style)),
+          child: Center(
+            child: Text(text, style: style ?? Styles.boldTextStyle16),
+          ),
         ),
       ),
     );

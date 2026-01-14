@@ -8,19 +8,20 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.hintText,
     this.style,
-    this.labelText,
+
     this.onChanged,
     this.validator,
     this.obscureText = false,
     this.suffixIcon,
-    this.keyboardType, this.controller,
+    this.keyboardType,
+    this.controller,
   });
   final TextEditingController? controller;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final String? hintText;
   final TextStyle? style;
-  final String? labelText;
+
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
   final bool obscureText;
@@ -34,10 +35,7 @@ class CustomTextFormField extends StatelessWidget {
       validator: validator,
       onChanged: onChanged,
       decoration: InputDecoration(
-        suffixIcon: Padding(
-          padding: const EdgeInsets.only(right: 3),
-          child: suffixIcon,
-        ),
+        suffixIcon: suffixIcon,
         suffixIconConstraints: BoxConstraints(minHeight: 16, minWidth: 16),
         filled: true,
         fillColor: Color(0xff3F3F46),

@@ -20,7 +20,7 @@ class CustomInputWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(labelText, style: style ?? Styles.regularTextStyle14),
-            SizedBox(height: 1),
+            SizedBox(height: 3),
             textField,
           ],
         ),

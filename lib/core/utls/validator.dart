@@ -1,4 +1,4 @@
-
+import 'package:flutter/material.dart';
 
 abstract class Validators {
   static String? email(String? value) {
@@ -18,6 +18,14 @@ abstract class Validators {
     }
     if (value.length < 6) {
       return 'Password too short';
+    } else {
+      return null;
+    }
+  }
+
+  static String? userName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'UserName is Required';
     } else {
       return null;
     }

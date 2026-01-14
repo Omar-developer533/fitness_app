@@ -25,6 +25,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final TextEditingController emailControlar = TextEditingController();
   final TextEditingController passwordlControlar = TextEditingController();
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -54,12 +55,18 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               labelText: 'Password',
               textField: CustomTextFormField(
                 controller: passwordlControlar,
-                obscureText: true,
+                obscureText: obscureText,
                 onChanged: (value) {},
                 validator: Validators.password,
                 prefixIcon: Icon(Icons.lock, size: 16),
                 hintText: 'Enter password',
-                suffixIcon: Icon(Icons.visibility, size: 16),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    obscureText = !obscureText;
+                    setState(() {});
+                  },
+                  icon: Icon(Icons.visibility, size: 16),
+                ),
               ),
             ),
             SizedBox(height: 21),
@@ -138,4 +145,3 @@ class _LogInViewBodyState extends State<LogInViewBody> {
     );
   }
 }
-
