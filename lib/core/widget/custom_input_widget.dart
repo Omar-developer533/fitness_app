@@ -7,15 +7,19 @@ class CustomInputWidget extends StatelessWidget {
     required this.labelText,
     this.style,
     required this.textField,
+    this.width, this.padding,
   });
   final String labelText;
   final TextStyle? style;
   final Widget textField;
+  final double? width;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      width: width,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: padding?? EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

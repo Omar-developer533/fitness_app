@@ -35,6 +35,9 @@ class CustomTextFormField extends StatelessWidget {
       validator: validator,
       onChanged: onChanged,
       decoration: InputDecoration(
+        contentPadding: prefixIcon == null
+            ? const EdgeInsetsDirectional.fromSTEB(3, 12, 16, 12)
+            : const EdgeInsetsDirectional.fromSTEB(0, 12, 16, 12),
         suffixIcon: suffixIcon,
         suffixIconConstraints: BoxConstraints(minHeight: 16, minWidth: 16),
         filled: true,
@@ -43,10 +46,12 @@ class CustomTextFormField extends StatelessWidget {
             style ??
             Styles.mediumTextStyle14.copyWith(color: Color(0xffC6C6C6)),
         hintText: hintText,
-        prefixIcon: Padding(
-          padding: const EdgeInsets.only(left: 3),
-          child: prefixIcon,
-        ),
+        prefixIcon: prefixIcon != null
+            ? Padding(
+                padding: const EdgeInsets.only(left: 6),
+                child: prefixIcon,
+              )
+            : null,
         prefixIconConstraints: BoxConstraints(minWidth: 16, minHeight: 16),
         isDense: true,
         border: OutlineInputBorder(

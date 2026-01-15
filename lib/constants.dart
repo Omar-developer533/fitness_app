@@ -12,3 +12,4 @@ const googleIcon = 'assets/images/Google.png';
 const oneIcon = 'assets/icons/one.svg';
 const towIcon = 'assets/icons/tow.svg';
 const towOrangeIcon = 'assets/icons/orangTow.svg';
+const calenderIcon = 'assets/icons/calender.svg';

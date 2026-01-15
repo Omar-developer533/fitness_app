@@ -1,4 +1,5 @@
 import 'package:fitness_app/constants.dart';
+import 'package:fitness_app/core/utls/app_rouer.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/core/utls/validator.dart';
 import 'package:fitness_app/core/widget/custom_button.dart';
@@ -7,12 +8,13 @@ import 'package:fitness_app/core/widget/custom_text_field.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/information_type.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class CreateAccount1Body extends StatefulWidget {
-  const CreateAccount1Body({super.key});
+class CreateAccountPart1Body extends StatefulWidget {
+  const CreateAccountPart1Body({super.key});
 
   @override
-  State<CreateAccount1Body> createState() => _CreateAccount1BodyState();
+  State<CreateAccountPart1Body> createState() => _CreateAccountPart1BodyState();
 }
 
 final GlobalKey<FormState> formKey = GlobalKey();
@@ -23,7 +25,7 @@ final TextEditingController confirmController = TextEditingController();
 final TextEditingController userNameController = TextEditingController();
 bool obscureText = true;
 
-class _CreateAccount1BodyState extends State<CreateAccount1Body> {
+class _CreateAccountPart1BodyState extends State<CreateAccountPart1Body> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -33,7 +35,11 @@ class _CreateAccount1BodyState extends State<CreateAccount1Body> {
         child: Column(
           children: [
             const SizedBox(height: 44),
-            CustomAppBar(),
+            CustomAppBar(
+              onPressed: () {
+                GoRouter.of(context).pop();
+              },
+            ),
             const SizedBox(height: 29.1),
             Text('Create an Account', style: Styles.semiBoldTextStyle24),
             Text(
@@ -131,6 +137,7 @@ class _CreateAccount1BodyState extends State<CreateAccount1Body> {
                   confirmController.clear();
                   emailController.clear();
                   userNameController.clear();
+                  GoRouter.of(context).push(AppRouer.kCreatAccountPart2);
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                   setState(() {});

@@ -30,4 +30,28 @@ abstract class Validators {
       return null;
     }
   }
+
+  static String? date(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Select Your birthday';
+    } else {
+      return null;
+    }
+  }
+
+  static String? location(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Select Your location';
+    } else {
+      return null;
+    }
+  }
+
+  static String? city(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Select Your city';
+    } else {
+      return null;
+    }
+  }
 }
