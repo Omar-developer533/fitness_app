@@ -1,4 +1,5 @@
 import 'package:fitness_app/constants.dart';
+import 'package:fitness_app/core/utls/app_rouer.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/core/utls/validator.dart';
 import 'package:fitness_app/core/widget/custom_button.dart';
@@ -158,12 +159,14 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
                   locationController.clear();
                   cityController.clear();
                   dateOfBirthdayController.clear();
+                  GoRouter.of(context).push(AppRouter.kHomeView);
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                   setState(() {});
                 }
               },
             ),
+            SizedBox(height: 70),
           ],
         ),
       ),

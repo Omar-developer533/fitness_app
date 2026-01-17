@@ -10,7 +10,11 @@ class CustomButton extends StatelessWidget {
     this.style,
     this.gradient,
     this.onTap,
+    this.hieght,
+    this.width,
   });
+  final double? hieght;
+  final double? width;
   final String text;
   final TextStyle? style;
   final Gradient? gradient;
@@ -22,8 +26,8 @@ class CustomButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Container(
-          height: 50,
-
+          height: hieght ?? 50,
+          width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             gradient:

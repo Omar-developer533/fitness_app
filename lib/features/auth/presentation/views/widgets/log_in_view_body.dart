@@ -78,6 +78,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                   passwordlControlar.clear();
                   emailControlar.clear();
                   autovalidateMode = AutovalidateMode.disabled;
+                  GoRouter.of(context).push(AppRouter.kHomeView);
                   setState(() {});
                 } else {
                   autovalidateMode = AutovalidateMode.always;
@@ -97,15 +98,13 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                   style: Styles.mediumTextStyle16,
                 ),
                 GestureDetector(
-                  child: GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).push(AppRouer.kCreateAccount1);
-                    },
-                    child: Text(
-                      'Sign up',
-                      style: Styles.mediumTextStyle16.copyWith(
-                        color: Color(0xffFFA05C),
-                      ),
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kCreateAccount1);
+                  },
+                  child: Text(
+                    'Sign up',
+                    style: Styles.mediumTextStyle16.copyWith(
+                      color: Color(0xffFFA05C),
                     ),
                   ),
                 ),
@@ -139,6 +138,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               ),
               text: Text(' GOOGLE', style: Styles.semiBoldTextStyle14),
             ),
+            SizedBox(height: 40),
           ],
         ),
       ),

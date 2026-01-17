@@ -2,9 +2,10 @@ import 'package:fitness_app/features/auth/presentation/views/create_account_Part
 import 'package:fitness_app/features/auth/presentation/views/create_account_part_2.dart';
 import 'package:fitness_app/features/auth/presentation/views/log_in_view.dart';
 import 'package:fitness_app/features/auth/presentation/views/splash_view.dart';
+import 'package:fitness_app/features/home/presentation/views/home_view.dart';
 import 'package:go_router/go_router.dart';
 
-abstract class AppRouer {
+abstract class AppRouter {
   static const kHomeView = '/homeView';
   static const kLogInView = '/logInView';
   static const kCreateAccount1 = '/createAccountPart1';
@@ -22,6 +23,7 @@ abstract class AppRouer {
         path: kCreatAccountPart2,
         builder: (context, state) => CreateAccountPart2(),
       ),
+      GoRoute(path: kHomeView, builder: (context, state) => HomeView()),
     ],
   );
 }

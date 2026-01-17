@@ -137,13 +137,14 @@ class _CreateAccountPart1BodyState extends State<CreateAccountPart1Body> {
                   confirmController.clear();
                   emailController.clear();
                   userNameController.clear();
-                  GoRouter.of(context).push(AppRouer.kCreatAccountPart2);
+                  GoRouter.of(context).push(AppRouter.kCreatAccountPart2);
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                   setState(() {});
                 }
               },
             ),
+            SizedBox(height: 50),
           ],
         ),
       ),
