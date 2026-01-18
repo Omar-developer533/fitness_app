@@ -5,14 +5,15 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
     required this.onPressed,
-    required this.widget,
+    required this.widget, this.padding,
+    
   });
   final void Function()? onPressed;
-  final Widget widget;
+  final Widget widget;final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: padding?? EdgeInsets.symmetric(horizontal: 16),
       child: Stack(
         alignment: Alignment.center,
         children: [
