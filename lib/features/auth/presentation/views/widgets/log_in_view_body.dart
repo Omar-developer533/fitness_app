@@ -34,7 +34,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
         key: formKey,
         child: Column(
           children: [
-            SizedBox(height: 40),
+            SizedBox(height: 25),
             Logo(),
             SizedBox(height: 29.1),
             Text('Login to your Account', style: Styles.semiBoldTextStyle24),
@@ -138,7 +138,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               ),
               text: Text(' GOOGLE', style: Styles.semiBoldTextStyle14),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 50),
           ],
         ),
       ),

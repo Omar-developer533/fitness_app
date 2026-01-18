@@ -18,3 +18,6 @@ const personIcon = 'assets/icons/preson.svg';
 const connectIcon = 'assets/icons/connect.svg';
 const vectorIcon = 'assets/icons/Vector.svg';
 const imageIcon = 'assets/icons/image.svg';
+const tutIcon = 'assets/icons/Calorie.svg';
+const flagIcon = 'assets/icons/flag.svg';
+const calorieIcon = 'assets/icons/TuT.svg';

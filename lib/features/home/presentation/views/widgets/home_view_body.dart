@@ -1,5 +1,6 @@
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/functions/linear_gradient.dart';
+import 'package:fitness_app/core/utls/app_rouer.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/logo.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/bluetooth_dropDown_list.dart';
@@ -10,6 +11,7 @@ import 'package:fitness_app/features/home/presentation/views/widgets/see_metrics
 import 'package:fitness_app/features/home/presentation/views/widgets/workout_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -135,7 +137,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ),
               const SizedBox(height: 20),
               NewPLanButton(),
-              SeeMetricsButton(),
+              SeeMetricsButton(
+                onPressed: () =>
+                    GoRouter.of(context).push(AppRouter.kMetricsView),
+              ),
             ],
           ),
         ),

@@ -7,6 +7,7 @@ import 'package:fitness_app/core/widget/custom_input_widget.dart';
 import 'package:fitness_app/core/widget/custom_text_field.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/information_type.dart';
+import 'package:fitness_app/features/auth/presentation/views/widgets/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -37,6 +38,7 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
           children: [
             const SizedBox(height: 44),
             CustomAppBar(
+              widget: Logo(),
               onPressed: () {
                 GoRouter.of(context).pop();
               },
