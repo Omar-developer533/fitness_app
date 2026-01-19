@@ -69,6 +69,7 @@ flutter:
     - assets/icons/flag.svg
     - assets/icons/Calorie.svg
     - assets/icons/charity.svg
+    - assets/icons/calorieWhit.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

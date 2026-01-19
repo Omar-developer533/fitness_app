@@ -4,6 +4,7 @@ import 'package:fitness_app/features/auth/presentation/views/log_in_view.dart';
 import 'package:fitness_app/features/auth/presentation/views/splash_view.dart';
 import 'package:fitness_app/features/home/presentation/views/home_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/body_weight_view.dart';
+import 'package:fitness_app/features/tracking/presentation/views/calorie_tracking_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/metrics_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -15,6 +16,8 @@ abstract class AppRouter {
   static const kCreatAccountPart2 = '/createAccountPart2';
   static const kMetricsView = '/metricsView';
   static const kBodyWeightView = '/bodyWeightView';
+  static const kCalorieTrackingView = '/calorieTrackingView';
+
   static final router = GoRouter(
     routes: [
       GoRoute(path: '/', builder: (context, state) => SplashView()),
@@ -33,6 +36,10 @@ abstract class AppRouter {
       GoRoute(
         path: kBodyWeightView,
         builder: (context, state) => BodyWeightView(),
+      ),
+      GoRoute(
+        path: kCalorieTrackingView,
+        builder: (context, state) => CalorieTrackingView(),
       ),
     ],
   );

@@ -34,7 +34,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
         key: formKey,
         child: Column(
           children: [
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             Logo(),
             SizedBox(height: 29.1),
             Text('Login to your Account', style: Styles.semiBoldTextStyle24),

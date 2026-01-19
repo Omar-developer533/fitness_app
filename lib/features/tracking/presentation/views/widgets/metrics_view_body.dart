@@ -55,6 +55,9 @@ class MetricsViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   MetricTypeCard(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.kCalorieTrackingView);
+                    },
                     icon: calorieIcon,
                     title: 'Calories burned',
                     subTitle: 'Based on distance and weight.',
