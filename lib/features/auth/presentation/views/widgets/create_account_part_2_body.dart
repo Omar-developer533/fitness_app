@@ -36,7 +36,7 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
         autovalidateMode: autovalidateMode,
         child: Column(
           children: [
-            const SizedBox(height: 44),
+            const SizedBox(height: 25),
             CustomAppBar(
               widget: Logo(),
               onPressed: () {

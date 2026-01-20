@@ -9,8 +9,11 @@ class PercentageProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8,bottom: 6),
+      padding: const EdgeInsets.only(top: 8, bottom: 6),
       child: LinearPercentIndicator(
+        animationDuration: 700,
+        animateFromLastPercent: true,
+        animation: true,
         lineHeight: 15,
         barRadius: Radius.circular(40),
         linearGradient: linearGradient(buttonColorStart, buttonColorEnd),

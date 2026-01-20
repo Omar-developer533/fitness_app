@@ -18,15 +18,14 @@ class CreateAccountPart1Body extends StatefulWidget {
   State<CreateAccountPart1Body> createState() => _CreateAccountPart1BodyState();
 }
 
-final GlobalKey<FormState> formKey = GlobalKey();
-AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-final TextEditingController passwordController = TextEditingController();
-final TextEditingController emailController = TextEditingController();
-final TextEditingController confirmController = TextEditingController();
-final TextEditingController userNameController = TextEditingController();
-bool obscureText = true;
-
 class _CreateAccountPart1BodyState extends State<CreateAccountPart1Body> {
+  final formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController confirmController = TextEditingController();
+  final TextEditingController userNameController = TextEditingController();
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -35,8 +34,9 @@ class _CreateAccountPart1BodyState extends State<CreateAccountPart1Body> {
         autovalidateMode: autovalidateMode,
         child: Column(
           children: [
-            const SizedBox(height: 44),
-            CustomAppBar(widget: Logo(),
+            const SizedBox(height: 25),
+            CustomAppBar(
+              widget: Logo(),
               onPressed: () {
                 GoRouter.of(context).pop();
               },

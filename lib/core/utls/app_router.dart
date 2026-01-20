@@ -24,15 +24,59 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(path: '/', builder: (context, state) => SplashView()),
-      GoRoute(path: kLogInView, builder: (context, state) => LogInView()),
+      GoRoute(
+        path: kLogInView,
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: LogInView(),
+            transitionDuration: Duration(seconds: 1),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+          );
+        },
+      ),
 
       GoRoute(
         path: kCreateAccount1,
-        builder: (context, state) => CreatAccountPart1(),
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: CreatAccountPart1(),
+            reverseTransitionDuration: Duration(milliseconds: 300),
+            transitionDuration: Duration(milliseconds: 300),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(0, 1),
+                      end: Offset.zero,
+                    ).animate(animation),
+                    child: child,
+                  );
+                },
+          );
+        },
       ),
       GoRoute(
         path: kCreatAccountPart2,
-        builder: (context, state) => CreateAccountPart2(),
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: CreateAccountPart2(),
+            transitionDuration: Duration(milliseconds: 300),
+            reverseTransitionDuration: Duration(milliseconds: 300),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return SlideTransition(
+                    position: Tween<Offset>(
+                      begin: Offset(1, 0),
+                      end: Offset.zero,
+                    ).animate(animation),
+                    child: child,
+                  );
+                },
+          );
+        },
       ),
       GoRoute(path: kHomeView, builder: (context, state) => HomeView()),
       GoRoute(path: kMetricsView, builder: (context, state) => MetricsView()),

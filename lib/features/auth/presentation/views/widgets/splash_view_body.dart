@@ -14,13 +14,39 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> {
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController animationController;
+  late final Animation<double> fadingAnimation;
+  late final Animation<Offset> slidingAnimation;
+
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3), () {
-      GoRouter.of(context).go(AppRouter.kLogInView);
-    });
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+    fadingAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(animationController);
+    slidingAnimation = Tween<Offset>(
+      begin: Offset(0, 10),
+      end: Offset(0, 0),
+    ).animate(animationController);
+
+    animationController.forward();
+
+    // Future.delayed(const Duration(seconds: 3), () {
+    //   GoRouter.of(context).go(AppRouter.kLogInView);
+    // });
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -29,15 +55,26 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Spacer(flex: 2),
-        Center(child: Image.asset(kLogoImage, height: 100.67, width: 85)),
+        FadeTransition(
+          opacity: fadingAnimation,
+          child: Center(
+            child: Image.asset(kLogoImage, height: 100.67, width: 85),
+          ),
+        ),
 
         Text('Helios Sports Tech', style: Styles.boldTextStyle28),
-        Text(
-          'Here To Compete',
-          style: Styles.mediumTextStyle16.copyWith(color: Color(0xffC0C0C0)),
+        SlideTransition(
+          position: slidingAnimation,
+          child: Text(
+            'Here To Compete',
+            style: Styles.mediumTextStyle16.copyWith(color: Color(0xffC0C0C0)),
+          ),
         ),
         Spacer(flex: 4),
         CustomButton(
+          onTap: () {
+            GoRouter.of(context).go(AppRouter.kLogInView);
+          },
           gradient: linearGradient(buttonColorStart, buttonColorEnd),
           text: 'Get started',
           style: Styles.boldTextStyle16.copyWith(color: Colors.white),
