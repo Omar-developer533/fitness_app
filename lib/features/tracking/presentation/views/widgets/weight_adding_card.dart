@@ -21,11 +21,11 @@ class WeightAddingCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           gradient: RadialGradient(
             radius: 1,
-            center: Alignment(0, -1.8),
+            center: const Alignment(0, -1.8),
 
             colors: [
-              Color(0xffEA8945),
-              Color(0xff161512).withValues(alpha: 0.71),
+              const Color(0xffEA8945),
+              const Color(0xff161512).withValues(alpha: 0.71),
             ],
           ),
         ),
@@ -38,7 +38,7 @@ class WeightAddingCard extends StatelessWidget {
               Text(weight, style: Styles.semiBoldTextStyle16),
               IconButton(
                 onPressed: onPressed,
-                icon: Icon(Icons.edit, color: Color(0xffFFA05C)),
+                icon: const Icon(Icons.edit, color: Color(0xffFFA05C)),
               ),
             ],
           ),

@@ -12,11 +12,11 @@ class WelcomCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         gradient: RadialGradient(
           radius: 1,
-          center: Alignment(1.5, -0.5),
+          center: const Alignment(1.5, -0.5),
 
           colors: [
-            Color(0xffEA8945),
-            Color(0xff161512).withValues(alpha: 0.71),
+            const Color(0xffEA8945),
+            const Color(0xff161512).withValues(alpha: 0.71),
           ],
         ),
       ),
@@ -30,31 +30,31 @@ class WelcomCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                const Row(
                   children: [
-                    Logo(height: 16, width: 13.93),
-                    const SizedBox(width: 3),
-                    Text(' Helios', style: Styles.semiBoldTextStyle12),
+                 Logo(height: 16, width: 13.93),
+                    SizedBox(width: 3),
+                 Text(' Helios', style: Styles.semiBoldTextStyle12),
                   ],
                 ),
                 const SizedBox(height: 3),
-                Text('Welcome back,', style: Styles.semiBoldTextStyle20),
-                Text('Nick!', style: Styles.semiBoldTextStyle20),
+             const   Text('Welcome back,', style: Styles.semiBoldTextStyle20),
+              const  Text('Nick!', style: Styles.semiBoldTextStyle20),
                 const SizedBox(height: 3),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffFFA05C),
+                    color: const Color(0xffFFA05C),
                     border: Border.all(width: 2),
                   ),
 
-                  child: Center(
+                  child: const Center(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                         horizontal: 10,
                         vertical: 5,
                       ),
-                      child: Text(
+                      child:Text(
                         'Try Premium Now',
                         style: Styles.regularTextStyle10,
                       ),

@@ -14,7 +14,7 @@ final void Function(int value) onTap;
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [gradientStartColor, gradientEndColor],
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -24,16 +24,16 @@ final void Function(int value) onTap;
             elevation: 0,
             showUnselectedLabels: false,
             showSelectedLabels: false,
-            unselectedItemColor: Color(0xff71717A),
-            selectedItemColor: Color(0xffFFA05C),
+            unselectedItemColor: const Color(0xff71717A),
+            selectedItemColor: const Color(0xffFFA05C),
             type: BottomNavigationBarType.fixed,
             onTap: onTap,
 
             backgroundColor: Colors.transparent,
             currentIndex: currentIndex,
             items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home, size: 24),
+              const BottomNavigationBarItem(
+                icon:Icon(Icons.home, size: 24),
                 label: 'home',
               ),
               BottomNavigationBarItem(
@@ -41,7 +41,7 @@ final void Function(int value) onTap;
                   vectorIcon,
                   height: 24,
                   width: 24,
-                  colorFilter: ColorFilter.mode(
+                  colorFilter: const ColorFilter.mode(
                     Color(0xff71717A),
                     BlendMode.srcIn,
                   ),
@@ -51,14 +51,14 @@ final void Function(int value) onTap;
                   calenderIcon,
                   height: 24,
                   width: 24,
-                  colorFilter: ColorFilter.mode(
+                  colorFilter: const ColorFilter.mode(
                     Color(0xffFFA05C),
                     BlendMode.srcIn,
                   ),
                 ),
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.add_circle_sharp, size: 24),
+              const BottomNavigationBarItem(
+                icon:Icon(Icons.add_circle_sharp, size: 24),
                 label: 'add',
               ),
               BottomNavigationBarItem(
@@ -66,7 +66,7 @@ final void Function(int value) onTap;
                   calenderIcon,
                   height: 24,
                   width: 24,
-                  colorFilter: ColorFilter.mode(
+                  colorFilter: const ColorFilter.mode(
                     Color(0xff71717A),
                     BlendMode.srcIn,
                   ),
@@ -76,7 +76,7 @@ final void Function(int value) onTap;
                   calenderIcon,
                   height: 24,
                   width: 24,
-                  colorFilter: ColorFilter.mode(
+                  colorFilter: const ColorFilter.mode(
                     Color(0xffFFA05C),
                     BlendMode.srcIn,
                   ),
@@ -87,7 +87,7 @@ final void Function(int value) onTap;
                   imageIcon,
                   height: 24,
                   width: 24,
-                  colorFilter: ColorFilter.mode(
+                  colorFilter: const ColorFilter.mode(
                     Color(0xff71717A),
                     BlendMode.srcIn,
                   ),
@@ -96,7 +96,7 @@ final void Function(int value) onTap;
                   imageIcon,
                   height: 24,
                   width: 24,
-                  colorFilter: ColorFilter.mode(
+                  colorFilter: const ColorFilter.mode(
                     Color(0xffFFA05C),
                     BlendMode.srcIn,
                   ),

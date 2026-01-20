@@ -12,11 +12,11 @@ class LevelCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         gradient: RadialGradient(
           radius: 1,
-          center: Alignment(0, -1.9),
+          center: const Alignment(0, -1.9),
 
           colors: [
-            Color(0xffEA8945),
-            Color(0xff161512).withValues(alpha: 0.71),
+            const Color(0xffEA8945),
+            const Color(0xff161512).withValues(alpha: 0.71),
           ],
         ),
       ),
@@ -28,7 +28,7 @@ class LevelCard extends StatelessWidget {
             Text(
               'Suggested Time under tension',
               style: Styles.mediumTextStyle14.copyWith(
-                color: Color(0xffA1A1AA),
+                color: const Color(0xffA1A1AA),
               ),
             ),
             const SizedBox(height: 5),
@@ -43,35 +43,35 @@ class LevelCard extends StatelessWidget {
                     Text(
                       'Beginner',
                       style: Styles.semiBoldTextStyle20.copyWith(
-                        color: Color(0xffFFA05C),
+                        color: const Color(0xffFFA05C),
                       ),
                     ),
                     const SizedBox(height: 5),
                     Text(
                       'Body building',
                       style: Styles.mediumTextStyle16.copyWith(
-                        color: Color(0xffA1A1AA),
+                        color: const Color(0xffA1A1AA),
                       ),
                     ),
                     const SizedBox(height: 5),
                     Text(
                       'Explosives:',
                       style: Styles.mediumTextStyle16.copyWith(
-                        color: Color(0xffA1A1AA),
+                        color: const Color(0xffA1A1AA),
                       ),
                     ),
                     const SizedBox(height: 5),
                     Text(
                       'Sustained',
                       style: Styles.mediumTextStyle16.copyWith(
-                        color: Color(0xffA1A1AA),
+                        color: const Color(0xffA1A1AA),
                       ),
                     ),
                     const SizedBox(height: 5),
                     Text(
                       'Powerlifting',
                       style: Styles.mediumTextStyle16.copyWith(
-                        color: Color(0xffA1A1AA),
+                        color: const Color(0xffA1A1AA),
                       ),
                     ),
                   ],
@@ -82,17 +82,17 @@ class LevelCard extends StatelessWidget {
                     Text(
                       '0:0:0:0',
                       style: Styles.semiBoldTextStyle20.copyWith(
-                        color: Color(0xffFFA05C),
+                        color: const Color(0xffFFA05C),
                       ),
                     ),
                     const SizedBox(height: 5),
-                    Text('0:0:0:0', style: Styles.mediumTextStyle16),
+                    const Text('0:0:0:0', style: Styles.mediumTextStyle16),
                     const SizedBox(height: 5),
-                    Text('0:0:0:0', style: Styles.mediumTextStyle16),
+                    const Text('0:0:0:0', style: Styles.mediumTextStyle16),
                     const SizedBox(height: 5),
-                    Text('0:0:0:0', style: Styles.mediumTextStyle16),
+                    const Text('0:0:0:0', style: Styles.mediumTextStyle16),
                     const SizedBox(height: 5),
-                    Text('0:0:0:0', style: Styles.mediumTextStyle16),
+                    const Text('0:0:0:0', style: Styles.mediumTextStyle16),
                   ],
                 ),
               ],

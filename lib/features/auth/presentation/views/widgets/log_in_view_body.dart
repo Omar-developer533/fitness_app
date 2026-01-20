@@ -36,9 +36,9 @@ class _LogInViewBodyState extends State<LogInViewBody> {
           children: [
             const SizedBox(height: 25),
             Logo(),
-            SizedBox(height: 29.1),
+            const SizedBox(height: 29.1),
             Text('Login to your Account', style: Styles.semiBoldTextStyle24),
-            SizedBox(height: 26),
+            const SizedBox(height: 26),
             CustomInputWidget(
               labelText: 'Email',
               textField: CustomTextFormField(
@@ -46,11 +46,11 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                 onChanged: (value) {},
                 validator: Validators.email,
                 keyboardType: TextInputType.emailAddress,
-                prefixIcon: Icon(Icons.email, size: 16),
+                prefixIcon: const Icon(Icons.email, size: 16),
                 hintText: 'Enter your email address',
               ),
             ),
-            SizedBox(height: 13),
+            const SizedBox(height: 13),
             CustomInputWidget(
               labelText: 'Password',
               textField: CustomTextFormField(
@@ -58,20 +58,20 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                 obscureText: obscureText,
                 onChanged: (value) {},
                 validator: Validators.password,
-                prefixIcon: Icon(Icons.lock, size: 16),
+                prefixIcon: const Icon(Icons.lock, size: 16),
                 hintText: 'Enter password',
                 suffixIcon: IconButton(
                   onPressed: () {
                     obscureText = !obscureText;
                     setState(() {});
                   },
-                  icon: Icon(Icons.visibility, size: 16),
+                  icon: const Icon(Icons.visibility, size: 16),
                 ),
               ),
             ),
-            SizedBox(height: 21),
+            const SizedBox(height: 21),
             ForotPassword(),
-            SizedBox(height: 59),
+            const SizedBox(height: 59),
             CustomButton(
               onTap: () {
                 if (formKey.currentState!.validate()) {
@@ -89,11 +89,11 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               style: Styles.boldTextStyle16,
               gradient: linearGradient(buttonColorStart, buttonColorEnd),
             ),
-            SizedBox(height: 21),
+            const SizedBox(height: 21),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Don’t have an account? ',
                   style: Styles.mediumTextStyle16,
                 ),
@@ -110,15 +110,15 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                 ),
               ],
             ),
-            SizedBox(height: 61),
+            const SizedBox(height: 61),
             Align(
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'Alternatively Login with:',
                 style: Styles.mediumTextStyle14,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             LoginWith(
               icon: Image.asset(
                 appleIcon,
@@ -126,9 +126,9 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                 width: 24,
                 height: 24,
               ),
-              text: Text(' APPLE ID', style: Styles.semiBoldTextStyle14),
+              text: const Text(' APPLE ID', style: Styles.semiBoldTextStyle14),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             LoginWith(
               icon: Image.asset(
                 googleIcon,
@@ -136,7 +136,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                 width: 24,
                 height: 24,
               ),
-              text: Text(' GOOGLE', style: Styles.semiBoldTextStyle14),
+              text: const Text(' GOOGLE', style: Styles.semiBoldTextStyle14),
             ),
             SizedBox(height: 50),
           ],

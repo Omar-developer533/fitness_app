@@ -20,6 +20,7 @@ class CalorieCard extends StatelessWidget {
   final String repsNumber;
   final String exerciseName;
   final Color? color;
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 12),
@@ -28,11 +29,11 @@ class CalorieCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           gradient: RadialGradient(
             radius: 1,
-            center: Alignment(1.2, 0),
+            center: const Alignment(1.2, 0),
 
             colors: [
-              Color(0xffEA8945),
-              Color(0xff161512).withValues(alpha: 0.71),
+              const Color(0xffEA8945),
+              const Color(0xff161512).withValues(alpha: 0.71),
             ],
           ),
         ),
@@ -48,10 +49,10 @@ class CalorieCard extends StatelessWidget {
                   Text(
                     day,
                     style: Styles.mediumTextStyle16.copyWith(
-                      color: color ?? Color(0xffA1A1AA),
+                      color: color ?? const Color(0xffA1A1AA),
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
                       CircularPercentIndicator(
@@ -59,7 +60,7 @@ class CalorieCard extends StatelessWidget {
                         animationDuration: 700,
                         animateFromLastPercent: true,
                         startAngle: 180,
-                        backgroundColor: Color(0xff434343),
+                        backgroundColor: const Color(0xff434343),
                         lineWidth: 10,
                         percent: percent,
                         radius: 34,
@@ -72,12 +73,12 @@ class CalorieCard extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(calNum, style: Styles.semiBoldTextStyle16),
-                              Text('cal', style: Styles.mediumTextStyle12),
+                              const Text('cal', style: Styles.mediumTextStyle12),
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Text(exerciseName, style: Styles.semiBoldTextStyle24),
                     ],
                   ),
@@ -85,8 +86,8 @@ class CalorieCard extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Text('Reps completed:', style: Styles.mediumTextStyle14),
-                  SizedBox(height: 10),
+                  const Text('Reps completed:', style: Styles.mediumTextStyle14),
+                  const SizedBox(height: 10),
                   Text(repsNumber, style: Styles.semiBoldTextStyle16),
                 ],
               ),

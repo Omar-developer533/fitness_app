@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/app_router.dart';
@@ -26,7 +25,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       vsync: this,
       duration: Duration(seconds: 2),
     );
-    fadingAnimation = Tween<double>(
+    fadingAnimation =  Tween<double>(
       begin: 0,
       end: 1,
     ).animate(animationController);
@@ -36,10 +35,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     ).animate(animationController);
 
     animationController.forward();
-
-    // Future.delayed(const Duration(seconds: 3), () {
-    //   GoRouter.of(context).go(AppRouter.kLogInView);
-    // });
     super.initState();
   }
 
@@ -54,7 +49,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Spacer(flex: 2),
+     const   Spacer(flex: 2),
         FadeTransition(
           opacity: fadingAnimation,
           child: Center(
@@ -62,7 +57,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
           ),
         ),
 
-        Text('Helios Sports Tech', style: Styles.boldTextStyle28),
+     const   Text('Helios Sports Tech', style: Styles.boldTextStyle28),
         SlideTransition(
           position: slidingAnimation,
           child: Text(
@@ -70,7 +65,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
             style: Styles.mediumTextStyle16.copyWith(color: Color(0xffC0C0C0)),
           ),
         ),
-        Spacer(flex: 4),
+      const  Spacer(flex: 4),
         CustomButton(
           onTap: () {
             GoRouter.of(context).go(AppRouter.kLogInView);
@@ -79,7 +74,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
           text: 'Get started',
           style: Styles.boldTextStyle16.copyWith(color: Colors.white),
         ),
-        Spacer(flex: 1),
+    const    Spacer(flex: 1),
       ],
     );
   }

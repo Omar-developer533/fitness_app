@@ -1,5 +1,4 @@
 import 'package:fitness_app/constants.dart';
-import 'package:fitness_app/core/functions/linear_gradient.dart';
 import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/logo.dart';
@@ -88,11 +87,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              const SizedBox(height: 5),
+              const SizedBox(height: 25),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Logo(width: 24, height: 27.78),
+                  const Logo(width: 24, height: 27.78),
                   IconButton(
                     key: _bluetoothKey,
                     onPressed: _toggleDropdown,
@@ -104,23 +103,23 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   ),
                 ],
               ),
-              SizedBox(height: 12),
-              CardsListView(),
-              SizedBox(height: 32),
+            const  SizedBox(height: 12),
+              const CardsListView(),
+          const    SizedBox(height: 32),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Overall progress:',
                     style: Styles.mediumTextStyle16.copyWith(
-                      color: Color(0xffD4D4D8),
+                      color: const Color(0xffD4D4D8),
                     ),
                   ),
-                  Text('70%', style: Styles.semiBoldTextStyle16),
+                const  Text('70%', style: Styles.semiBoldTextStyle16),
                 ],
               ),
-              PercentageProgressIndicator(),
-              WorkoutCards(
+              const PercentageProgressIndicator(),
+            const  WorkoutCards(
                 title: 'Your next workout:',
                 subTitle: 'Push ups',
                 buttonName: 'Start workout',
@@ -129,14 +128,14 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               WorkoutCards(
                 title: 'Your last workout:',
                 titleStyle: Styles.mediumTextStyle16.copyWith(
-                  color: Color(0xffA1A1AA),
+                  color: const Color(0xffA1A1AA),
                 ),
                 buttonName: 'Redo workout',
                 subTitle: 'Pull ups',
-                center: Alignment(1.3, -0.5),
+                center: const Alignment(1.3, -0.5),
               ),
               const SizedBox(height: 20),
-              NewPLanButton(),
+              const NewPLanButton(),
               SeeMetricsButton(
                 onPressed: () =>
                     GoRouter.of(context).push(AppRouter.kMetricsView),

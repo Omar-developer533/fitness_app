@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class BluetoothDropdownList extends StatelessWidget {
   final Function(String) onItemSelected;
 
-  BluetoothDropdownList({super.key, required this.onItemSelected});
+const  BluetoothDropdownList({super.key, required this.onItemSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class BluetoothDropdownList extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [gradientStartColor, gradientEndColor],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -27,7 +27,7 @@ class BluetoothDropdownList extends StatelessWidget {
             ListTile(
               horizontalTitleGap: 2,
               leading: SvgPicture.asset(connectIcon, height: 20, width: 20),
-              title: Text(
+              title:const Text(
                 'Tavon’s fitbit',
                 style: Styles.mediumTextStyle14,
                 maxLines: 1,
@@ -36,7 +36,7 @@ class BluetoothDropdownList extends StatelessWidget {
               subtitle: Text(
                 'Device ID: 1200393a23r',
                 style: Styles.regularTextStyle14.copyWith(
-                  color: Color(0xffD4D4D8),
+                  color: const Color(0xffD4D4D8),
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -45,7 +45,7 @@ class BluetoothDropdownList extends StatelessWidget {
                 child: Text(
                   'Connected',
                   style: Styles.mediumTextStyle10.copyWith(
-                    color: Color(0xff52C76C),
+                    color: const Color(0xff52C76C),
                   ),
                 ),
               ),
@@ -53,7 +53,7 @@ class BluetoothDropdownList extends StatelessWidget {
             ListTile(
               horizontalTitleGap: 2,
               leading: SvgPicture.asset(connectIcon, height: 20, width: 20),
-              title: Text(
+              title:const Text(
                 'AppleWat...',
                 style: Styles.mediumTextStyle14,
                 maxLines: 1,
@@ -62,7 +62,7 @@ class BluetoothDropdownList extends StatelessWidget {
               subtitle: Text(
                 'Device ID: 1200393a23r',
                 style: Styles.regularTextStyle14.copyWith(
-                  color: Color(0xffD4D4D8),
+                  color: const Color(0xffD4D4D8),
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -71,7 +71,7 @@ class BluetoothDropdownList extends StatelessWidget {
                 child: Text(
                   'Connected',
                   style: Styles.mediumTextStyle10.copyWith(
-                    color: Color(0xff52C76C),
+                    color: const Color(0xff52C76C),
                   ),
                 ),
               ),
@@ -79,7 +79,7 @@ class BluetoothDropdownList extends StatelessWidget {
             ListTile(
               horizontalTitleGap: 2,
               leading: SvgPicture.asset(connectIcon, height: 20, width: 20),
-              title: Text(
+              title:const Text(
                 'Tavon’s fitbit',
                 style: Styles.mediumTextStyle14,
                 maxLines: 1,
@@ -88,7 +88,7 @@ class BluetoothDropdownList extends StatelessWidget {
               subtitle: Text(
                 'Device ID: 1200393a23r',
                 style: Styles.regularTextStyle14.copyWith(
-                  color: Color(0xffD4D4D8),
+                  color: const Color(0xffD4D4D8),
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -97,7 +97,7 @@ class BluetoothDropdownList extends StatelessWidget {
                 child: Text(
                   'Connected',
                   style: Styles.mediumTextStyle10.copyWith(
-                    color: Color(0xff52C76C),
+                    color: const Color(0xff52C76C),
                   ),
                 ),
               ),
@@ -108,7 +108,7 @@ class BluetoothDropdownList extends StatelessWidget {
                 child: Text(
                   'Add a device',
                   style: Styles.mediumTextStyle12.copyWith(
-                    color: Color(0xffFFA05C),
+                    color: const Color(0xffFFA05C),
                   ),
                 ),
               ),

@@ -8,7 +8,7 @@ class AppGradientBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [gradientStartColor, gradientEndColor],
           begin: Alignment.topRight,

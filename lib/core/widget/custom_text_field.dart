@@ -39,12 +39,12 @@ class CustomTextFormField extends StatelessWidget {
             ? const EdgeInsetsDirectional.fromSTEB(3, 12, 16, 12)
             : const EdgeInsetsDirectional.fromSTEB(0, 12, 16, 12),
         suffixIcon: suffixIcon,
-        suffixIconConstraints: BoxConstraints(minHeight: 16, minWidth: 16),
+        suffixIconConstraints: const BoxConstraints(minHeight: 16, minWidth: 16),
         filled: true,
-        fillColor: Color(0xff3F3F46),
+        fillColor: const Color(0xff3F3F46),
         hintStyle:
             style ??
-            Styles.mediumTextStyle14.copyWith(color: Color(0xffC6C6C6)),
+            Styles.mediumTextStyle14.copyWith(color: const Color(0xffC6C6C6)),
         hintText: hintText,
         prefixIcon: prefixIcon != null
             ? Padding(
@@ -52,19 +52,19 @@ class CustomTextFormField extends StatelessWidget {
                 child: prefixIcon,
               )
             : null,
-        prefixIconConstraints: BoxConstraints(minWidth: 16, minHeight: 16),
+        prefixIconConstraints: const BoxConstraints(minWidth: 16, minHeight: 16),
         isDense: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: Colors.transparent),
+          borderSide: const BorderSide(color: Colors.transparent),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: Colors.transparent),
+          borderSide: const BorderSide(color: Colors.transparent),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: Colors.transparent),
+          borderSide: const BorderSide(color: Colors.transparent),
         ),
       ),
     );

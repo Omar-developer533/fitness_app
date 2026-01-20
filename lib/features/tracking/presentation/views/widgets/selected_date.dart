@@ -15,33 +15,33 @@ class _SelectedDateState extends State<SelectedDate> {
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
       isExpanded: true,
-      dropdownColor: Colors.white,
-      value: currentvalue,
+      dropdownColor: const Color(0xff353A40),
+      initialValue: currentvalue,
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xffFFA05C)),
+          borderSide: const BorderSide(color: Color(0xffFFA05C)),
           borderRadius: BorderRadius.circular(4),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xffFFA05C)),
+          borderSide: const BorderSide(color: Color(0xffFFA05C)),
           borderRadius: BorderRadius.circular(4),
         ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xffFFA05C)),
+          borderSide: const BorderSide(color: Color(0xffFFA05C)),
           borderRadius: BorderRadius.circular(4),
         ),
-        suffixIcon: Icon(Icons.arrow_drop_down, color: Color(0xffFFA05C)),
+        suffixIcon: const Icon(Icons.arrow_drop_down, color: Color(0xffFFA05C)),
       ),
       items: years
           .map(
-            (year) => DropdownMenuItem( value: year,
+            (year) => DropdownMenuItem(
+              value: year,
               child: Text(
                 year,
                 style: Styles.mediumTextStyle14.copyWith(
-                  color: Color(0xffFFA05C),
+                  color: const Color(0xffFFA05C),
                 ),
               ),
-             
             ),
           )
           .toList(),

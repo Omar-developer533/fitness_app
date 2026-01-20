@@ -22,9 +22,9 @@ class NewPLanButton extends StatelessWidget {
           children: [
             IconButton(
               onPressed: onPressed,
-              icon: Icon(Icons.add, size: 25, color: Colors.white),
+              icon: const Icon( Icons.add, size: 25, color: Colors.white),
             ),
-            Text('Create new plan', style: Styles.semiBoldTextStyle16),
+          const  Text('Create new plan', style: Styles.semiBoldTextStyle16),
           ],
         ),
       ),

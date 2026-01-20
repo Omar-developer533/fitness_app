@@ -18,7 +18,7 @@ class FormTracking extends StatelessWidget {
         width: 170,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Color(0xff161512).withValues(alpha: 0.5),
+          color: const Color(0xff161512).withValues(alpha: 0.5),
         ),
         child: Padding(
           padding: const EdgeInsets.only(left: 9, top: 8, right: 9),
@@ -41,8 +41,8 @@ class FormTracking extends StatelessWidget {
                         buttonColorEnd,
                       ),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(5.0),
                       child: Text(
                         'coming soon',
                         style: Styles.regularTextStyle10,
@@ -51,7 +51,7 @@ class FormTracking extends StatelessWidget {
                   ),
                 ],
               ),
-              Opacity(
+              const Opacity(
                 opacity: 0.5,
                 child: Text('Form tracking', style: Styles.semiBoldTextStyle18),
               ),
@@ -60,7 +60,7 @@ class FormTracking extends StatelessWidget {
                 child: Text(
                   'Track your form and techniqu',
                   style: Styles.regularTextStyle14.copyWith(
-                    color: Color(0xffA1A1AA),
+                    color: const Color(0xffA1A1AA),
                   ),
                   maxLines: 2,
                 ),

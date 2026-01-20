@@ -6,14 +6,14 @@ class CardsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return  SizedBox(
       height: MediaQuery.of(context).size.height * 0.16,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 2,
         itemBuilder: (index, context) {
-          return Padding(
-            padding: const EdgeInsets.only(right: 16),
+          return const Padding(
+            padding: EdgeInsets.only(right: 16),
             child: WelcomCard(),
           );
         },

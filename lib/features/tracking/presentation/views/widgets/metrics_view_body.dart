@@ -16,14 +16,14 @@ class MetricsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 25),
+        const SizedBox(height: 25),
         CustomAppBar(
           onPressed: () {
             GoRouter.of(context).pop();
           },
           widget: Text(
             'Metrics',
-            style: Styles.mediumTextStyle18.copyWith(color: Color(0xffA1A1AA)),
+            style: Styles.mediumTextStyle18.copyWith(color: const Color(0xffA1A1AA)),
           ),
         ),
 
@@ -43,12 +43,12 @@ class MetricsViewBody extends StatelessWidget {
                     title: 'Body weight',
                     subTitle: 'Input weight weekly to track progress.',
                   ),
-                  MetricTypeCard(
+                  const MetricTypeCard(
                     icon: flagIcon,
                     title: 'Goals',
                     subTitle: 'List of all goals created',
                   ),
-                  FormTracking(),
+                  const FormTracking(),
                 ],
               ),
               Column(

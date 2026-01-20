@@ -2,8 +2,8 @@ import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/add_items.dart';
+import 'package:fitness_app/features/tracking/presentation/views/widgets/calender.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_adding_card.dart';
-import 'package:fitness_app/features/tracking/presentation/views/widgets/selected_date.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_goal_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,54 +20,32 @@ class BodyWeightViewBody extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
+         const   SizedBox(height: 25),
             CustomAppBar(
-              padding: EdgeInsets.symmetric(horizontal: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 0),
               onPressed: () {
                 GoRouter.of(context).pop();
               },
               widget: Text(
                 'Body weight',
                 style: Styles.mediumTextStyle18.copyWith(
-                  color: Color(0xffA1A1AA),
+                  color: const Color(0xffA1A1AA),
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(width: 100, height: 47, child: SelectedDate()),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    border: BoxBorder.all(color: Color(0xffFFA05C)),
-                  ),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: SvgPicture.asset(
-                      calenderIcon,
-                      height: 16,
-                      width: 16,
-                      colorFilter: ColorFilter.mode(
-                        Color(0xffFFA05C),
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 15),
+         const   SizedBox(height: 20),
+        const    Calender(),
+          const  SizedBox(height: 15),
             SvgPicture.asset(chairty, height: 264, width: 356),
-            SizedBox(height: 15),
-            WeightGoalCard(),
-            SizedBox(height: 15),
-            Align(
+          const  SizedBox(height: 15),
+        const    WeightGoalCard(),
+         const   SizedBox(height: 15),
+            const Align(
               alignment: Alignment.centerLeft,
-              child: Text('Weekly weight log', style: Styles.mediumTextStyle16),
+              child:Text('Weekly weight log', style: Styles.mediumTextStyle16),
             ),
-            SizedBox(height: 7),
-            AddItems(text: 'Add new weight'),
+          const  SizedBox(height: 7),
+         const   AddItems(text: 'Add new weight'),
             WeightAddingCard(
               weekNumber: 'Week 9',
               weight: '130kg',
@@ -88,6 +66,7 @@ class BodyWeightViewBody extends StatelessWidget {
               weight: '150kg',
               onPressed: () {},
             ),
+            const SizedBox(height: 50),
           ],
         ),
       ),

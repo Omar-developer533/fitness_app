@@ -28,11 +28,11 @@ class MetricTypeCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             gradient: RadialGradient(
               radius: 1,
-              center: Alignment(0, -1.9),
+              center: const Alignment(0, -1.9),
 
               colors: [
-                Color(0xffEA8945),
-                Color(0xff161512).withValues(alpha: 0.71),
+                const Color(0xffEA8945),
+                const Color(0xff161512).withValues(alpha: 0.71),
               ],
             ),
           ),
@@ -46,7 +46,7 @@ class MetricTypeCard extends StatelessWidget {
                 Text(
                   subTitle,
                   style: Styles.regularTextStyle14.copyWith(
-                    color: Color(0xffA1A1AA),
+                    color: const Color(0xffA1A1AA),
                   ),
                 ),
               ],

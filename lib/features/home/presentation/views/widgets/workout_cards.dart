@@ -26,11 +26,11 @@ class WorkoutCards extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           gradient: RadialGradient(
             radius: 1,
-            center: center ?? Alignment(0, -1.6),
+            center: center ?? const Alignment(0, -1.6),
 
             colors: [
-              Color(0xffEA8945),
-              Color(0xff161512).withValues(alpha: 0.71),
+              const Color(0xffEA8945),
+              const Color(0xff161512).withValues(alpha: 0.71),
             ],
           ),
         ),
@@ -53,7 +53,7 @@ class WorkoutCards extends StatelessWidget {
                       style:
                           titleStyle ??
                           Styles.mediumTextStyle16.copyWith(
-                            color: Color(0xffFFA05C),
+                            color: const Color(0xffFFA05C),
                           ),
                     ),
                     const SizedBox(height: 3),
@@ -72,30 +72,30 @@ class WorkoutCards extends StatelessWidget {
                             Text(
                               'Duration:',
                               style: Styles.regularTextStyle14.copyWith(
-                                color: Color(0xffA1A1AA),
+                                color: const Color(0xffA1A1AA),
                               ),
                             ),
                             Text(
                               'Sets:',
                               style: Styles.regularTextStyle14.copyWith(
-                                color: Color(0xffA1A1AA),
+                                color: const Color(0xffA1A1AA),
                               ),
                             ),
                             Text(
                               'Reps:',
                               style: Styles.regularTextStyle14.copyWith(
-                                color: Color(0xffA1A1AA),
+                                color: const Color(0xffA1A1AA),
                               ),
                             ),
                             Text(
                               'Exercise:',
                               style: Styles.regularTextStyle14.copyWith(
-                                color: Color(0xffA1A1AA),
+                                color: const Color(0xffA1A1AA),
                               ),
                             ),
                           ],
                         ),
-                        TableRow(
+                      const  TableRow(
                           children: [
                             Text('30 minutes', style: Styles.mediumTextStyle14),
                             Text('115', style: Styles.mediumTextStyle14),

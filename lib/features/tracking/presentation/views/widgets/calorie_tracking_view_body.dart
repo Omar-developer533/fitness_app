@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
@@ -20,40 +22,40 @@ class CalorieTrackingViewBody extends StatelessWidget {
           children: [
             const SizedBox(height: 25),
             CustomAppBar(
-              padding: EdgeInsets.all(0),
+              padding: const EdgeInsets.all(0),
               onPressed: () {
                 GoRouter.of(context).pop();
               },
               widget: Text(
                 'Calories',
                 style: Styles.mediumTextStyle18.copyWith(
-                  color: Color(0xffA1A1AA),
+                  color: const Color(0xffA1A1AA),
                 ),
               ),
             ),
-            CustomCircularIndicator(),
-            SizedBox(height: 10),
+        const    CustomCircularIndicator(),
+         const   SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(calorieWhit, height: 50, width: 46),
-                Text('Total Calories burned', style: Styles.mediumTextStyle20),
+                const Text('Total Calories burned', style: Styles.mediumTextStyle20),
               ],
             ),
             Text(
               'These numbers are based on distance and weigh',
               style: Styles.mediumTextStyle12.copyWith(
-                color: Color(0xffA1A1AA),
+                color: const Color(0xffA1A1AA),
               ),
             ),
-            SizedBox(height: 20),
-            AddItems(text: 'Add calories'),
+         const   SizedBox(height: 20),
+          const  AddItems(text: 'Add calories'),
             Row(
               children: [
-                Text('This week', style: Styles.semiBoldTextStyle16),
+              const  Text('This week', style: Styles.semiBoldTextStyle16),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon:const Icon(
                     Icons.arrow_drop_down,
                     color: Colors.white,
                     size: 24,
@@ -61,7 +63,7 @@ class CalorieTrackingViewBody extends StatelessWidget {
                 ),
               ],
             ),
-            CalorieCard(
+         const   CalorieCard(
               color: Color(0xffFFA05C),
               day: 'Today:',
               calNum: '150',
@@ -69,20 +71,21 @@ class CalorieTrackingViewBody extends StatelessWidget {
               repsNumber: '10/10',
               exerciseName: 'Push ups',
             ),
-            CalorieCard(
+         const   CalorieCard(
               day: 'Tuesday:',
               percent: 0.4,
               calNum: '85',
               repsNumber: '7/10',
               exerciseName: 'Squats',
             ),
-            CalorieCard(
+         const   CalorieCard(
               day: 'Monday',
               percent: 0.5,
               calNum: '165',
               repsNumber: '10/20',
               exerciseName: 'Deadlift',
             ),
+            const SizedBox(height: 50),
           ],
         ),
       ),

@@ -12,14 +12,14 @@ class SeeMetricsButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(4),
-          border: Border.all(color: Color(0xffFFA05C)),
+          border: Border.all(color: const Color(0xffFFA05C)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
               onPressed: onPressed,
-              icon: Icon(
+              icon:const Icon(
                 Icons.signal_cellular_alt,
                 size: 20,
                 color: Color(0xffFFA05C),
@@ -28,7 +28,7 @@ class SeeMetricsButton extends StatelessWidget {
             Text(
               'See metrics',
               style: Styles.mediumTextStyle16.copyWith(
-                color: Color(0xffFFA05C),
+                color: const Color(0xffFFA05C),
               ),
             ),
           ],

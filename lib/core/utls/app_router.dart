@@ -23,13 +23,13 @@ abstract class AppRouter {
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: '/', builder: (context, state) => SplashView()),
+      GoRoute(path: '/', builder: (context, state) => const SplashView()),
       GoRoute(
         path: kLogInView,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            child: LogInView(),
-            transitionDuration: Duration(seconds: 1),
+            child: const LogInView(),
+            transitionDuration: const Duration(seconds: 1),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
                   return FadeTransition(opacity: animation, child: child);
@@ -42,14 +42,14 @@ abstract class AppRouter {
         path: kCreateAccount1,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            child: CreatAccountPart1(),
-            reverseTransitionDuration: Duration(milliseconds: 300),
-            transitionDuration: Duration(milliseconds: 300),
+            child: const CreatAccountPart1(),
+            reverseTransitionDuration: const Duration(milliseconds: 300),
+            transitionDuration: const Duration(milliseconds: 300),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
                   return SlideTransition(
                     position: Tween<Offset>(
-                      begin: Offset(0, 1),
+                      begin: const Offset(0, 1),
                       end: Offset.zero,
                     ).animate(animation),
                     child: child,
@@ -62,14 +62,14 @@ abstract class AppRouter {
         path: kCreatAccountPart2,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            child: CreateAccountPart2(),
-            transitionDuration: Duration(milliseconds: 300),
-            reverseTransitionDuration: Duration(milliseconds: 300),
+            child: const CreateAccountPart2(),
+            transitionDuration: const Duration(milliseconds: 300),
+            reverseTransitionDuration: const Duration(milliseconds: 300),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
                   return SlideTransition(
                     position: Tween<Offset>(
-                      begin: Offset(1, 0),
+                      begin: const Offset(1, 0),
                       end: Offset.zero,
                     ).animate(animation),
                     child: child,
@@ -78,19 +78,19 @@ abstract class AppRouter {
           );
         },
       ),
-      GoRoute(path: kHomeView, builder: (context, state) => HomeView()),
-      GoRoute(path: kMetricsView, builder: (context, state) => MetricsView()),
+      GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
+      GoRoute(path: kMetricsView, builder: (context, state) => const MetricsView()),
       GoRoute(
         path: kBodyWeightView,
-        builder: (context, state) => BodyWeightView(),
+        builder: (context, state) => const BodyWeightView(),
       ),
       GoRoute(
         path: kCalorieTrackingView,
-        builder: (context, state) => CalorieTrackingView(),
+        builder: (context, state) => const CalorieTrackingView(),
       ),
       GoRoute(
         path: kTimeUnderTensionView,
-        builder: (context, state) => TimeUnderTension(),
+        builder: (context, state) => const TimeUnderTension(),
       ),
     ],
   );

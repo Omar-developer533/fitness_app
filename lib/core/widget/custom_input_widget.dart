@@ -19,12 +19,12 @@ class CustomInputWidget extends StatelessWidget {
     return SizedBox(
       width: width,
       child: Padding(
-        padding: padding?? EdgeInsets.symmetric(horizontal: 16),
+        padding: padding?? const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(labelText, style: style ?? Styles.regularTextStyle14),
-            SizedBox(height: 3),
+            const SizedBox(height: 3),
             textField,
           ],
         ),

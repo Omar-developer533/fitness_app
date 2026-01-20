@@ -1,4 +1,4 @@
-import 'package:fitness_app/features/auth/presentation/views/widgets/logo.dart';
+
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: onPressed,
-                icon: Icon(Icons.arrow_back, size: 24, color: Colors.white),
+                icon:const Icon(Icons.arrow_back, size: 24, color: Colors.white),
               ),
             ],
           ),

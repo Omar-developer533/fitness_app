@@ -11,14 +11,14 @@ class PercentageProgressIndicator extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 6),
       child: LinearPercentIndicator(
-        animationDuration: 700,
+        animationDuration: 1200,
         animateFromLastPercent: true,
         animation: true,
         lineHeight: 15,
-        barRadius: Radius.circular(40),
+        barRadius: const Radius.circular(40),
         linearGradient: linearGradient(buttonColorStart, buttonColorEnd),
         percent: .70,
-        backgroundColor: Color(0xff3F3F46),
+        backgroundColor: const Color(0xff3F3F46),
       ),
     );
   }

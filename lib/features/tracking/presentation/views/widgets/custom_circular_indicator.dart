@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/functions/linear_gradient.dart';
 import 'package:fitness_app/core/utls/styles.dart';
@@ -12,25 +14,31 @@ class CustomCircularIndicator extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        Container(
-          height: 220,
-          width: 220,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Color(0xffE8EDF3).withValues(alpha: 0.1),
-                offset: Offset(-12, -20),
-                blurRadius: 56,
+        ImageFiltered(
+          imageFilter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+          child: Container(
+            height: 220,
+            width: 220,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xffE8EDF3).withValues(alpha: 0.1),
+                  offset: const Offset(-12, -20),
+                  blurRadius: 56,
+                ),
+                BoxShadow(
+                  color: const Color(0xff020303).withValues(alpha: 0.7),
+                  blurRadius: 64,
+                  offset: const Offset(36, 12),
+                ),
+              ],
+              border: Border.all(color: const Color(0xff505962), width: 1),
+              borderRadius: BorderRadius.circular(200),
+              gradient: linearGradient(
+                const Color(0xff32383E).withValues(alpha: 0.1),
+                const Color(0xff17191C),
               ),
-              BoxShadow(
-                color: Color(0xff020303).withValues(alpha: 0.7),
-                blurRadius: 64,
-                offset: Offset(36, 12),
-              ),
-            ],
-            border: Border.all(style: BorderStyle.none),
-            borderRadius: BorderRadius.circular(200),
-            gradient: linearGradient(Color(0xff32383E), Color(0xff17191C)),
+            ),
           ),
         ),
         CircularPercentIndicator(
@@ -44,11 +52,11 @@ class CustomCircularIndicator extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('3,600', style: Styles.semiBoldTextStyle32),
+                const Text('3,600', style: Styles.semiBoldTextStyle32),
                 Text(
                   'cal',
                   style: Styles.mediumTextStyle16.copyWith(
-                    color: Color(0xffE4E4E7),
+                    color: const Color(0xffE4E4E7),
                   ),
                 ),
               ],
@@ -60,7 +68,7 @@ class CustomCircularIndicator extends StatelessWidget {
           percent: 0.75,
           radius: 93,
           fillColor: Colors.transparent,
-          backgroundColor: Color(0xff32383E),
+          backgroundColor: const Color(0xff32383E),
           linearGradient: linearGradient(buttonColorStart, buttonColorEnd),
           rotateLinearGradient: true,
           progressBorderColor: Colors.transparent,

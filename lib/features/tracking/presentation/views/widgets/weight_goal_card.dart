@@ -11,11 +11,11 @@ class WeightGoalCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         gradient: RadialGradient(
           radius: 1,
-          center: Alignment(0, -1.6),
+          center: const Alignment(0, -1.6),
 
           colors: [
-            Color(0xffEA8945),
-            Color(0xff161512).withValues(alpha: 0.71),
+            const Color(0xffEA8945),
+            const Color(0xff161512).withValues(alpha: 0.71),
           ],
         ),
       ),
@@ -30,14 +30,14 @@ class WeightGoalCard extends StatelessWidget {
                 Text(
                   'Weight goal:',
                   style: Styles.mediumTextStyle14.copyWith(
-                    color: Color(0xffA1A1AA),
+                    color: const Color(0xffA1A1AA),
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   '120kg',
                   style: Styles.semiBoldTextStyle20.copyWith(
-                    color: Color(0xffFFA05C),
+                    color: const Color(0xffFFA05C),
                   ),
                 ),
               ],
@@ -48,16 +48,16 @@ class WeightGoalCard extends StatelessWidget {
                 Text(
                   'Time left to goal',
                   style: Styles.mediumTextStyle14.copyWith(
-                    color: Color(0xffA1A1AA),
+                    color: const Color(0xffA1A1AA),
                   ),
                 ),
-                SizedBox(height: 5),
-                Text('10/9/2023', style: Styles.regularTextStyle16),
+                const SizedBox(height: 5),
+                const Text('10/9/2023', style: Styles.regularTextStyle16),
               ],
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.edit, color: Color(0xffFFA05C)),
+              icon: const Icon(Icons.edit, color: Color(0xffFFA05C)),
             ),
           ],
         ),
