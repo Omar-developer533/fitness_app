@@ -23,3 +23,4 @@ const flagIcon = 'assets/icons/flag.svg';
 const calorieIcon = 'assets/icons/TuT.svg';
 const chairty = 'assets/icons/charity.svg';
 const calorieWhit = 'assets/icons/calorieWhit.svg';
+const whatIcon = 'assets/icons/what.svg';

@@ -1,9 +1,8 @@
-
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 
-class WeightCard extends StatelessWidget {
-  const WeightCard({super.key});
+class WeightGoalCard extends StatelessWidget {
+  const WeightGoalCard({super.key});
 
   @override
   Widget build(BuildContext context) {

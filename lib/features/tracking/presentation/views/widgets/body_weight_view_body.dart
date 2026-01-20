@@ -2,9 +2,9 @@ import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/add_items.dart';
-import 'package:fitness_app/features/tracking/presentation/views/widgets/adding_items.dart';
+import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_adding_card.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/selected_date.dart';
-import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_card.dart';
+import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_goal_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -60,7 +60,7 @@ class BodyWeightViewBody extends StatelessWidget {
             SizedBox(height: 15),
             SvgPicture.asset(chairty, height: 264, width: 356),
             SizedBox(height: 15),
-            WeightCard(),
+            WeightGoalCard(),
             SizedBox(height: 15),
             Align(
               alignment: Alignment.centerLeft,
@@ -68,10 +68,26 @@ class BodyWeightViewBody extends StatelessWidget {
             ),
             SizedBox(height: 7),
             AddItems(text: 'Add new weight'),
-            AddingItem(weekNumber: 'Week 9', weight: '130kg', onPressed: () {}),
-            AddingItem(weekNumber: 'Week 8', weight: '140kg', onPressed: () {}),
-            AddingItem(weekNumber: 'Week 7', weight: '145kg', onPressed: () {}),
-            AddingItem(weekNumber: 'Week 6', weight: '150kg', onPressed: () {}),
+            WeightAddingCard(
+              weekNumber: 'Week 9',
+              weight: '130kg',
+              onPressed: () {},
+            ),
+            WeightAddingCard(
+              weekNumber: 'Week 8',
+              weight: '140kg',
+              onPressed: () {},
+            ),
+            WeightAddingCard(
+              weekNumber: 'Week 7',
+              weight: '145kg',
+              onPressed: () {},
+            ),
+            WeightAddingCard(
+              weekNumber: 'Week 6',
+              weight: '150kg',
+              onPressed: () {},
+            ),
           ],
         ),
       ),

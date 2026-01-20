@@ -1,5 +1,5 @@
 import 'package:fitness_app/constants.dart';
-import 'package:fitness_app/core/utls/app_rouer.dart';
+import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/core/utls/validator.dart';
 import 'package:fitness_app/core/widget/custom_button.dart';

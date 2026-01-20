@@ -1,5 +1,5 @@
 import 'package:fitness_app/constants.dart';
-import 'package:fitness_app/core/utls/app_rouer.dart';
+import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {

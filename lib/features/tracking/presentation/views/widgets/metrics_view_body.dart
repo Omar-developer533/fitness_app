@@ -1,6 +1,6 @@
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/functions/linear_gradient.dart';
-import 'package:fitness_app/core/utls/app_rouer.dart';
+import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/form_tracking.dart';
@@ -63,6 +63,11 @@ class MetricsViewBody extends StatelessWidget {
                     subTitle: 'Based on distance and weight.',
                   ),
                   MetricTypeCard(
+                    onTap: () {
+                      GoRouter.of(
+                        context,
+                      ).push(AppRouter.kTimeUnderTensionView);
+                    },
                     icon: tutIcon,
                     title: 'T.U.T',
                     subTitle: 'Time under tension',

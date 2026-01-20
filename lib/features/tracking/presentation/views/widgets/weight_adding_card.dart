@@ -1,9 +1,8 @@
-
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 
-class AddingItem extends StatelessWidget {
-  const AddingItem({
+class WeightAddingCard extends StatelessWidget {
+  const WeightAddingCard({
     super.key,
     required this.weekNumber,
     required this.weight,

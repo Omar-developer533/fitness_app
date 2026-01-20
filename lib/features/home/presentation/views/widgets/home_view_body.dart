@@ -1,6 +1,6 @@
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/functions/linear_gradient.dart';
-import 'package:fitness_app/core/utls/app_rouer.dart';
+import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/logo.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/bluetooth_dropDown_list.dart';
