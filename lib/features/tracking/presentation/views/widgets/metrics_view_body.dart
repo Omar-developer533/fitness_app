@@ -1,12 +1,10 @@
 import 'package:fitness_app/constants.dart';
-import 'package:fitness_app/core/functions/linear_gradient.dart';
 import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/form_tracking.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/metric_type_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class MetricsViewBody extends StatelessWidget {
@@ -23,7 +21,9 @@ class MetricsViewBody extends StatelessWidget {
           },
           widget: Text(
             'Metrics',
-            style: Styles.mediumTextStyle18.copyWith(color: const Color(0xffA1A1AA)),
+            style: Styles.mediumTextStyle18.copyWith(
+              color: const Color(0xffA1A1AA),
+            ),
           ),
         ),
 
@@ -43,7 +43,10 @@ class MetricsViewBody extends StatelessWidget {
                     title: 'Body weight',
                     subTitle: 'Input weight weekly to track progress.',
                   ),
-                  const MetricTypeCard(
+                  MetricTypeCard(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.kGoalView);
+                    },
                     icon: flagIcon,
                     title: 'Goals',
                     subTitle: 'List of all goals created',

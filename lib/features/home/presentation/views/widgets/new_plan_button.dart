@@ -1,5 +1,3 @@
-
-
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/functions/linear_gradient.dart';
 import 'package:fitness_app/core/utls/styles.dart';
@@ -22,9 +20,9 @@ class NewPLanButton extends StatelessWidget {
           children: [
             IconButton(
               onPressed: onPressed,
-              icon: const Icon( Icons.add, size: 25, color: Colors.white),
+              icon: const Icon(Icons.add, size: 25, color: Colors.white),
             ),
-          const  Text('Create new plan', style: Styles.semiBoldTextStyle16),
+            const Text('Create new plan', style: Styles.semiBoldTextStyle16),
           ],
         ),
       ),

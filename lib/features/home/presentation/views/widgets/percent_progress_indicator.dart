@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class PercentageProgressIndicator extends StatelessWidget {
-  const PercentageProgressIndicator({super.key});
-
+  const PercentageProgressIndicator({super.key, this.height, this.percent});
+  final double? height;
+  final double? percent;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 6),
       child: LinearPercentIndicator(
+        padding: EdgeInsets.zero,
         animationDuration: 1200,
         animateFromLastPercent: true,
         animation: true,
-        lineHeight: 15,
+        lineHeight: height ?? 15,
         barRadius: const Radius.circular(40),
         linearGradient: linearGradient(buttonColorStart, buttonColorEnd),
         percent: .70,

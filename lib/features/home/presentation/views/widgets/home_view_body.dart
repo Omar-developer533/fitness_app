@@ -4,6 +4,7 @@ import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/logo.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/bluetooth_dropDown_list.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/cards_list_view.dart';
+import 'package:fitness_app/features/home/presentation/views/widgets/custom_liner_progress_indicator.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/new_plan_button.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/percent_progress_indicator.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/see_metrics_button.dart';
@@ -106,19 +107,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             const  SizedBox(height: 12),
               const CardsListView(),
           const    SizedBox(height: 32),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Overall progress:',
-                    style: Styles.mediumTextStyle16.copyWith(
-                      color: const Color(0xffD4D4D8),
-                    ),
-                  ),
-                const  Text('70%', style: Styles.semiBoldTextStyle16),
-                ],
-              ),
-              const PercentageProgressIndicator(),
+              CustomLinerProgressIndicator(),
+              
             const  WorkoutCards(
                 title: 'Your next workout:',
                 subTitle: 'Push ups',

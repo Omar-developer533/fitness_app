@@ -5,13 +5,14 @@ import 'package:fitness_app/features/auth/presentation/views/splash_view.dart';
 import 'package:fitness_app/features/home/presentation/views/home_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/body_weight_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/calorie_tracking_view.dart';
+import 'package:fitness_app/features/tracking/presentation/views/goal_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/metrics_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/time_under_tension.dart';
-import 'package:fitness_app/features/workout/presentation/views/widgets/time_under_tension_body.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
+  static const kGoalView = '/goalview';
   static const kHomeView = '/homeView';
   static const kLogInView = '/logInView';
   static const kCreateAccount1 = '/createAccountPart1';
@@ -79,7 +80,10 @@ abstract class AppRouter {
         },
       ),
       GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
-      GoRoute(path: kMetricsView, builder: (context, state) => const MetricsView()),
+      GoRoute(
+        path: kMetricsView,
+        builder: (context, state) => const MetricsView(),
+      ),
       GoRoute(
         path: kBodyWeightView,
         builder: (context, state) => const BodyWeightView(),
@@ -92,6 +96,7 @@ abstract class AppRouter {
         path: kTimeUnderTensionView,
         builder: (context, state) => const TimeUnderTension(),
       ),
+      GoRoute(path: kGoalView, builder: (context, state) => GoalView()),
     ],
   );
 }
