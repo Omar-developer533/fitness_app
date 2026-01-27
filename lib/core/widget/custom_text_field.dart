@@ -15,13 +15,15 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.keyboardType,
     this.controller,
+    this.color, this.borderColor,
   });
+  final Color? borderColor;
   final TextEditingController? controller;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final String? hintText;
   final TextStyle? style;
-
+  final Color? color;
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
   final bool obscureText;
@@ -39,9 +41,12 @@ class CustomTextFormField extends StatelessWidget {
             ? const EdgeInsetsDirectional.fromSTEB(3, 12, 16, 12)
             : const EdgeInsetsDirectional.fromSTEB(0, 12, 16, 12),
         suffixIcon: suffixIcon,
-        suffixIconConstraints: const BoxConstraints(minHeight: 16, minWidth: 16),
+        suffixIconConstraints: const BoxConstraints(
+          minHeight: 16,
+          minWidth: 16,
+        ),
         filled: true,
-        fillColor: const Color(0xff3F3F46),
+        fillColor: color ?? const Color(0xff3F3F46),
         hintStyle:
             style ??
             Styles.mediumTextStyle14.copyWith(color: const Color(0xffC6C6C6)),
@@ -52,19 +57,22 @@ class CustomTextFormField extends StatelessWidget {
                 child: prefixIcon,
               )
             : null,
-        prefixIconConstraints: const BoxConstraints(minWidth: 16, minHeight: 16),
+        prefixIconConstraints: const BoxConstraints(
+          minWidth: 16,
+          minHeight: 16,
+        ),
         isDense: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: const BorderSide(color: Colors.transparent),
+          borderSide: BorderSide(color: borderColor ?? Colors.transparent),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: const BorderSide(color: Colors.transparent),
+          borderSide: BorderSide(color: borderColor ?? Colors.transparent),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: const BorderSide(color: Colors.transparent),
+          borderSide: BorderSide(color: borderColor ?? Colors.transparent),
         ),
       ),
     );

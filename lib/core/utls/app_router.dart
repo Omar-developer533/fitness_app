@@ -7,11 +7,13 @@ import 'package:fitness_app/features/tracking/presentation/views/body_weight_vie
 import 'package:fitness_app/features/tracking/presentation/views/calorie_tracking_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/goal_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/metrics_view.dart';
+import 'package:fitness_app/features/workout/presentation/views/creat_exercise_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/time_under_tension.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
+  static const kCreateExerciseView = '/createExercisePart1';
   static const kGoalView = '/goalview';
   static const kHomeView = '/homeView';
   static const kLogInView = '/logInView';
@@ -97,6 +99,10 @@ abstract class AppRouter {
         builder: (context, state) => const TimeUnderTension(),
       ),
       GoRoute(path: kGoalView, builder: (context, state) => GoalView()),
+      GoRoute(
+        path: kCreateExerciseView,
+        builder: (context, state) => CreatExerciseView(),
+      ),
     ],
   );
 }

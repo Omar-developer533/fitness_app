@@ -1,5 +1,7 @@
+import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomSwitchButton extends StatefulWidget {
   const CustomSwitchButton({super.key});
@@ -50,6 +52,7 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton> {
           Expanded(
             child: GestureDetector(
               onTap: () {
+                GoRouter.of(context).push(AppRouter.kCreateExerciseView);
                 buttomOnePressd = false;
                 buttomTowPressd = true;
                 setState(() {});

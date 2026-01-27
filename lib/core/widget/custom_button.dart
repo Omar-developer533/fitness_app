@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
     this.onTap,
     this.hieght,
     this.width,
+    this.padding,
   });
   final double? hieght;
   final double? width;
@@ -19,12 +20,13 @@ class CustomButton extends StatelessWidget {
   final TextStyle? style;
   final Gradient? gradient;
   final void Function()? onTap;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: padding ?? const EdgeInsets.symmetric(horizontal: 16),
         child: Container(
           height: hieght ?? 50,
           width: width,
