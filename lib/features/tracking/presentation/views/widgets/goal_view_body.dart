@@ -37,12 +37,8 @@ class GoalViewBody extends StatelessWidget {
               const CustomSwitchButton(),
               const SizedBox(height: 16),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: NewPLanButton(
-                  onPressed: () {
-                    GoRouter.of(context).push(AppRouter.kCreateExerciseView);
-                  },
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: NewPLanButton(onPressed: () {}),
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),

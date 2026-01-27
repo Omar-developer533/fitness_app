@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Padding(
         padding: padding ?? const EdgeInsets.symmetric(horizontal: 16),
