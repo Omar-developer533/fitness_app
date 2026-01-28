@@ -1,6 +1,5 @@
 
 import 'package:fitness_app/core/utls/styles.dart';
-import 'package:fitness_app/features/workout/presentation/views/widgets/create_exercise_view_body.dart';
 import 'package:flutter/material.dart';
 
 

@@ -1,14 +1,11 @@
-import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/styles.dart';
-import 'package:fitness_app/core/widget/custom_button.dart';
-import 'package:fitness_app/core/widget/custom_input_widget.dart';
-import 'package:fitness_app/core/widget/custom_text_field.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
+import 'package:fitness_app/features/workout/presentation/manager/cubits/cubit/exercise_type_cubit.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_type.dart';
+import 'package:fitness_app/features/workout/presentation/views/widgets/regualr_exercise_section.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/super_set_exercise_section.dart';
-import 'package:fitness_app/features/workout/presentation/views/widgets/workout_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class CreateExerciseViewBody extends StatefulWidget {
@@ -19,12 +16,9 @@ class CreateExerciseViewBody extends StatefulWidget {
 }
 
 class _CreateExerciseViewBodyState extends State<CreateExerciseViewBody> {
-  bool buttonOneIssPressed = true;
-  bool buttontowIssPressed = false;
-  bool buttonThreeeIssPressed = false;
-
   @override
   Widget build(BuildContext context) {
+    var exerciseCubit = BlocProvider.of<ExerciseTypeCubit>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -49,33 +43,37 @@ class _CreateExerciseViewBodyState extends State<CreateExerciseViewBody> {
               ExerciseType(
                 exerciseName: 'Warm up',
                 icon: Icons.autorenew,
-                isPressed: buttonOneIssPressed,
+                isPressed: exerciseCubit.warmUpPress,
                 onTap: () {
-                  buttonOneIssPressed = true;
-                  buttontowIssPressed = false;
-                  buttonThreeeIssPressed = false;
+                  exerciseCubit.warmUpPress = true;
+                  exerciseCubit.coolDownPress = false;
+                  exerciseCubit.mainIsPress = false;
+                  exerciseCubit.exerciseType();
+
                   setState(() {});
                 },
               ),
               ExerciseType(
                 exerciseName: 'Main',
                 icon: Icons.access_time_filled_rounded,
-                isPressed: buttontowIssPressed,
+                isPressed: exerciseCubit.mainIsPress,
                 onTap: () {
-                  buttontowIssPressed = true;
-                  buttonOneIssPressed = false;
-                  buttonThreeeIssPressed = false;
+                  exerciseCubit.mainIsPress = true;
+                  exerciseCubit.coolDownPress = false;
+                  exerciseCubit.warmUpPress = false;
                   setState(() {});
                 },
               ),
               ExerciseType(
                 exerciseName: 'Cool Down',
                 icon: Icons.pie_chart,
-                isPressed: buttonThreeeIssPressed,
+                isPressed: exerciseCubit.coolDownPress,
                 onTap: () {
-                  buttonThreeeIssPressed = true;
-                  buttontowIssPressed = false;
-                  buttonOneIssPressed = false;
+                  exerciseCubit.coolDownPress = true;
+                  exerciseCubit.warmUpPress = false;
+                  exerciseCubit.mainIsPress = false;
+                  exerciseCubit.exerciseType();
+
                   setState(() {});
                 },
               ),
@@ -83,7 +81,15 @@ class _CreateExerciseViewBodyState extends State<CreateExerciseViewBody> {
           ),
           const SizedBox(height: 35),
 
-          const SuperSetExerciseSection(),
+          BlocBuilder<ExerciseTypeCubit, ExerciseTypeState>(
+            builder: (context, state) {
+              if (state is ExerciseTypeRegular) {
+                return const RegularExerciseSection();
+              } else {
+                return const SuperSetExerciseSection();
+              }
+            },
+          ),
           const SizedBox(height: 30),
         ],
       ),

@@ -1,4 +1,3 @@
-import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/custom_liner_progress_indicator.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/new_plan_button.dart';
@@ -6,8 +5,6 @@ import 'package:fitness_app/features/tracking/presentation/views/widgets/custom_
 import 'package:fitness_app/features/tracking/presentation/views/widgets/custom_switch_button.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/workout_card_edit.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
 class GoalViewBody extends StatelessWidget {
   const GoalViewBody({super.key});
 
