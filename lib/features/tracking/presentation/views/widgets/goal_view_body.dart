@@ -1,10 +1,14 @@
+import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/custom_liner_progress_indicator.dart';
 import 'package:fitness_app/features/home/presentation/views/widgets/new_plan_button.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/custom_search_bar.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/custom_switch_button.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/workout_card_edit.dart';
+import 'package:fitness_app/features/tracking/presentation/views/widgets/workout_card_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 class GoalViewBody extends StatelessWidget {
   const GoalViewBody({super.key});
 
@@ -35,7 +39,11 @@ class GoalViewBody extends StatelessWidget {
               const SizedBox(height: 16),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: NewPLanButton(onPressed: () {}),
+                child: NewPLanButton(
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.kCreatePlaneView);
+                  },
+                ),
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
@@ -47,23 +55,6 @@ class GoalViewBody extends StatelessWidget {
         ),
         const WorkoutCardListView(),
       ],
-    );
-  }
-}
-
-class WorkoutCardListView extends StatelessWidget {
-  const WorkoutCardListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverList.builder(
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: WorkoutCardEdit(title: 'Push ups'),
-        );
-      },
     );
   }
 }

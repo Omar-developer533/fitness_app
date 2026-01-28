@@ -8,7 +8,7 @@ class ExerciseTypeCubit extends Cubit<ExerciseTypeState> {
     this.coolDownPress = false,
     this.warmUpPress = true,
     this.mainIsPress = false,
-  }) : super(ExerciseTypeInitial());
+  }) : super(ExerciseTypeRegular());
   bool mainIsPress;
   bool coolDownPress;
   bool warmUpPress;

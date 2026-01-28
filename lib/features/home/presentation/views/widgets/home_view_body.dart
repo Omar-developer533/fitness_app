@@ -104,12 +104,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   ),
                 ],
               ),
-            const  SizedBox(height: 12),
+              const SizedBox(height: 12),
               const CardsListView(),
-          const    SizedBox(height: 32),
-              CustomLinerProgressIndicator(),
-              
-            const  WorkoutCards(
+              const SizedBox(height: 32),
+              const CustomLinerProgressIndicator(),
+
+              const WorkoutCards(
                 title: 'Your next workout:',
                 subTitle: 'Push ups',
                 buttonName: 'Start workout',
@@ -125,7 +125,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 center: const Alignment(1.3, -0.5),
               ),
               const SizedBox(height: 20),
-              const NewPLanButton(),
+              NewPLanButton(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kCreatePlaneView);
+                },
+              ),
               SeeMetricsButton(
                 onPressed: () =>
                     GoRouter.of(context).push(AppRouter.kMetricsView),

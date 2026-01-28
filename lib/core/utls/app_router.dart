@@ -3,6 +3,7 @@ import 'package:fitness_app/features/auth/presentation/views/create_account_part
 import 'package:fitness_app/features/auth/presentation/views/log_in_view.dart';
 import 'package:fitness_app/features/auth/presentation/views/splash_view.dart';
 import 'package:fitness_app/features/home/presentation/views/home_view.dart';
+import 'package:fitness_app/features/plans/presentation/views/create_plan_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/body_weight_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/calorie_tracking_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/goal_view.dart';
@@ -25,6 +26,7 @@ abstract class AppRouter {
   static const kBodyWeightView = '/bodyWeightView';
   static const kCalorieTrackingView = '/calorieTrackingView';
   static const kTimeUnderTensionView = '/timeUnderTension';
+  static const kCreatePlaneView = '/createPlanView';
 
   static final router = GoRouter(
     routes: [
@@ -100,13 +102,17 @@ abstract class AppRouter {
         path: kTimeUnderTensionView,
         builder: (context, state) => const TimeUnderTension(),
       ),
-      GoRoute(path: kGoalView, builder: (context, state) => GoalView()),
+      GoRoute(path: kGoalView, builder: (context, state) => const GoalView()),
       GoRoute(
         path: kCreateExerciseView,
         builder: (context, state) => BlocProvider(
           create: (context) => ExerciseTypeCubit(),
-          child: CreatExerciseView(),
+          child: const CreatExerciseView(),
         ),
+      ),
+      GoRoute(
+        path: kCreatePlaneView,
+        builder: (context, state) => const CreatePlanView(),
       ),
     ],
   );

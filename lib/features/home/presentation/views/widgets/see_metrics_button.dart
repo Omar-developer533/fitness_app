@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class SeeMetricsButton extends StatelessWidget {
   const SeeMetricsButton({super.key, this.onPressed});
   final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +20,7 @@ class SeeMetricsButton extends StatelessWidget {
           children: [
             IconButton(
               onPressed: onPressed,
-              icon:const Icon(
+              icon: const Icon(
                 Icons.signal_cellular_alt,
                 size: 20,
                 color: Color(0xffFFA05C),
