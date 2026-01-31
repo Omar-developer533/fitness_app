@@ -25,3 +25,4 @@ const chairty = 'assets/icons/charity.svg';
 const calorieWhit = 'assets/icons/calorieWhit.svg';
 const whatIcon = 'assets/icons/what.svg';
 const searchIcon = 'assets/icons/searchIcon.svg';
+const exerciseBox = 'ExerciseBox';

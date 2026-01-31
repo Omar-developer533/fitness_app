@@ -1,7 +1,5 @@
-
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
-
 
 class WorkoutItem extends StatefulWidget {
   const WorkoutItem({
@@ -9,13 +7,16 @@ class WorkoutItem extends StatefulWidget {
     required this.boxname,
     required this.unit,
     required this.number,
+    required this.onTapCount,
   });
   final String boxname, unit;
   final int number;
+  final Function(int currentCount) onTapCount;
 
   @override
   State<WorkoutItem> createState() => _WorkoutItemState();
 }
+
 class _WorkoutItemState extends State<WorkoutItem> {
   late int count;
   @override
@@ -72,6 +73,7 @@ class _WorkoutItemState extends State<WorkoutItem> {
               IconButton(
                 onPressed: () {
                   count++;
+                  widget.onTapCount(count);
                   setState(() {});
                 },
                 icon: const Icon(
@@ -82,8 +84,12 @@ class _WorkoutItemState extends State<WorkoutItem> {
               ),
               IconButton(
                 onPressed: () {
-                  count--;
-                  setState(() {});
+                  if (count > 0) {
+                    count--;
+
+                    widget.onTapCount(count);
+                    setState(() {});
+                  }
                 },
                 icon: const Icon(
                   Icons.arrow_drop_down,

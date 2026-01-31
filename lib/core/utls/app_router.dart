@@ -8,7 +8,7 @@ import 'package:fitness_app/features/tracking/presentation/views/body_weight_vie
 import 'package:fitness_app/features/tracking/presentation/views/calorie_tracking_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/goal_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/metrics_view.dart';
-import 'package:fitness_app/features/workout/presentation/manager/cubits/cubit/exercise_type_cubit.dart';
+import 'package:fitness_app/features/workout/presentation/manager/cubits/exercise_type_cubit/exercise_type_cubit.dart';
 import 'package:fitness_app/features/workout/presentation/views/creat_exercise_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/time_under_tension.dart';
 import 'package:flutter/material.dart';

@@ -90,11 +90,31 @@ class _SuperSetExerciseSectionState extends State<SuperSetExerciseSection> {
                 crossAxisSpacing: MediaQuery.of(context).size.width * 0.07,
                 crossAxisCount: 2,
               ),
-              children: const [
-                WorkoutItem(boxname: 'Reps:', unit: 'reps', number: 7),
-                WorkoutItem(boxname: 'Sets', unit: 'sets', number: 10),
-                WorkoutItem(boxname: 'Weight', unit: 'lbs', number: 150),
-                WorkoutItem(boxname: 'Rest timer:', unit: 's', number: 80),
+              children: [
+                WorkoutItem(
+                  boxname: 'Reps:',
+                  unit: 'reps',
+                  number: 7,
+                  onTapCount: (currentCount) {},
+                ),
+                WorkoutItem(
+                  boxname: 'Sets',
+                  unit: 'sets',
+                  number: 10,
+                  onTapCount: (currentCount) {},
+                ),
+                WorkoutItem(
+                  boxname: 'Weight',
+                  unit: 'lbs',
+                  number: 150,
+                  onTapCount: (currentCount) {},
+                ),
+                WorkoutItem(
+                  boxname: 'Rest timer:',
+                  unit: 's',
+                  number: 80,
+                  onTapCount: (currentCount) {},
+                ),
               ],
             ),
           ),

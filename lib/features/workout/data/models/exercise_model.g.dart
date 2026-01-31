@@ -17,12 +17,12 @@ class ExerciseModelAdapter extends TypeAdapter<ExerciseModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return ExerciseModel(
-      type: fields[0] as String,
-      name: fields[1] as String,
-      sets: fields[2] as int,
-      reps: fields[3] as int,
-      restTimer: fields[4] as int,
-      weight: fields[5] as double,
+      type: fields[0] as String?,
+      name: fields[1] as String?,
+      sets: fields[2] as int?,
+      reps: fields[3] as int?,
+      restTimer: fields[4] as int?,
+      weight: fields[5] as int?,
     );
   }
 
