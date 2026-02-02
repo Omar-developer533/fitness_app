@@ -24,10 +24,23 @@ class WorkoutCubit extends Cubit<WorkoutState> {
     );
     add.fold(
       (failer) {
-        emit(AddWorkoutFailure(FailureMessage: failer));
+        emit(AddWorkoutFailure(failureMessage: failer));
       },
       (succes) {
         emit(AddWorkoutSuccess());
+      },
+    );
+  }
+
+  void getExercise() {
+    emit(GetWorkoutLoading());
+    var get = workoutRepo.getExercise();
+    get.fold(
+      (faier) {
+        emit(GetWorkoutFailure(failureMessage: faier));
+      },
+      (exercises) {
+        emit(GetWorkoutSuccess(exercises: exercises));
       },
     );
   }

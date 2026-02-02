@@ -1,9 +1,11 @@
 import 'package:fitness_app/constants.dart';
+import 'package:fitness_app/core/functions/linear_gradient.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/core/widget/custom_button.dart';
 import 'package:fitness_app/core/widget/custom_input_widget.dart';
 import 'package:fitness_app/core/widget/custom_text_field.dart';
-import 'package:fitness_app/features/workout/presentation/manager/cubits/workout_cubit/workout_cubit.dart';
+import 'package:fitness_app/core/manager/workout_cubit/workout_cubit.dart';
+import 'package:fitness_app/features/workout/presentation/views/widgets/custom_progress_indicator.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/workout_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -114,14 +116,33 @@ class _RegularExerciseSectionState extends State<RegularExerciseSection> {
           ],
         ),
         const SizedBox(height: 25),
-        CustomButton(
-          onTap: () {
-            workoutCubit.name = excersiceController.text;
-            workoutCubit.type = 'Main';
-            workoutCubit.addWokout();
+        BlocConsumer<WorkoutCubit, WorkoutState>(
+          listener: (context, state) {
+            if (state is AddWorkoutSuccess) {
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(SnackBar(content: Text('Add Successful')));
+            } else if (state is AddWorkoutFailure) {
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(SnackBar(content: Text(state.failureMessage)));
+            }
           },
-          text: 'Create workout',
-          padding: EdgeInsets.zero,
+          builder: (context, state) {
+            if (state is AddWorkoutLoading) {
+              return CustomProgressIndicator();
+            } else {
+              return CustomButton(
+                onTap: () {
+                  workoutCubit.name = excersiceController.text;
+                  workoutCubit.type = 'Main';
+                  workoutCubit.addWokout();
+                },
+                text: 'Create workout',
+                padding: EdgeInsets.zero,
+              );
+            }
+          },
         ),
       ],
     );

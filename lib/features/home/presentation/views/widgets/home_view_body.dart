@@ -134,7 +134,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 onPressed: () =>
                     GoRouter.of(context).push(AppRouter.kMetricsView),
               ),
-            ],
+           ],
           ),
         ),
       ],
