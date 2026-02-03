@@ -28,10 +28,9 @@ class WourkoutRepoImpl extends WorkoutRepo {
     var workoutBox = Hive.box<ExerciseModel>(exerciseBox);
     try {
       List<ExerciseModel> exercises = workoutBox.values.toList();
-      left(exercises);
+      return right(exercises);
     } catch (e) {
-      right(e.toString());
+      return left(e.toString());
     }
-    throw UnimplementedError();
   }
 }

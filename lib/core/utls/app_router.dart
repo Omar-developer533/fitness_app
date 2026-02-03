@@ -1,3 +1,4 @@
+import 'package:fitness_app/core/manager/workout_cubit/workout_cubit.dart';
 import 'package:fitness_app/features/auth/presentation/views/create_account_Part_1.dart';
 import 'package:fitness_app/features/auth/presentation/views/create_account_part_2.dart';
 import 'package:fitness_app/features/auth/presentation/views/log_in_view.dart';
@@ -8,6 +9,7 @@ import 'package:fitness_app/features/tracking/presentation/views/body_weight_vie
 import 'package:fitness_app/features/tracking/presentation/views/calorie_tracking_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/goal_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/metrics_view.dart';
+import 'package:fitness_app/features/workout/data/repos/wourkout_repo.dart';
 import 'package:fitness_app/features/workout/presentation/manager/cubits/exercise_type_cubit/exercise_type_cubit.dart';
 import 'package:fitness_app/features/workout/presentation/views/creat_exercise_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/time_under_tension.dart';
@@ -85,34 +87,111 @@ abstract class AppRouter {
           );
         },
       ),
-      GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
+      GoRoute(
+        path: kHomeView,
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: const HomeView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          transitionDuration: const Duration(seconds: 1),
+          reverseTransitionDuration: const Duration(seconds: 1),
+        ),
+      ),
       GoRoute(
         path: kMetricsView,
-        builder: (context, state) => const MetricsView(),
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: const MetricsView(),
+          reverseTransitionDuration: const Duration(milliseconds: 300),
+          transitionDuration: const Duration(milliseconds: 300),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(0, -1),
+                end: Offset.zero,
+              ).animate(animation),
+              child: child,
+            );
+          },
+        ),
       ),
       GoRoute(
         path: kBodyWeightView,
-        builder: (context, state) => const BodyWeightView(),
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: const BodyWeightView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          reverseTransitionDuration: Duration(seconds: 1),
+          transitionDuration: Duration(seconds: 1),
+        ),
       ),
       GoRoute(
         path: kCalorieTrackingView,
-        builder: (context, state) => const CalorieTrackingView(),
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: const CalorieTrackingView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          reverseTransitionDuration: const Duration(seconds: 1),
+          transitionDuration: const Duration(seconds: 1),
+        ),
       ),
       GoRoute(
         path: kTimeUnderTensionView,
-        builder: (context, state) => const TimeUnderTension(),
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: const TimeUnderTension(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          reverseTransitionDuration: const Duration(seconds: 1),
+          transitionDuration: const Duration(seconds: 1),
+        ),
       ),
-      GoRoute(path: kGoalView, builder: (context, state) => const GoalView()),
+      GoRoute(
+        path: kGoalView,
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: const GoalView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          reverseTransitionDuration: Duration(seconds: 1),
+          transitionDuration: Duration(seconds: 1),
+        ),
+      ),
       GoRoute(
         path: kCreateExerciseView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => ExerciseTypeCubit(),
-          child: const CreatExerciseView(),
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: BlocProvider(
+            create: (context) => ExerciseTypeCubit(),
+            child: const CreatExerciseView(),
+          ),
+          reverseTransitionDuration: const Duration(milliseconds: 300),
+          transitionDuration: const Duration(milliseconds: 300),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(0, 1),
+                end: Offset.zero,
+              ).animate(animation),
+              child: child,
+            );
+          },
         ),
       ),
       GoRoute(
         path: kCreatePlaneView,
-        builder: (context, state) => const CreatePlanView(),
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: BlocProvider(
+            create: (context) => WorkoutCubit(WourkoutRepoImpl()),
+            child: const CreatePlanView(),
+          ),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          reverseTransitionDuration: const Duration(seconds: 1),
+          transitionDuration: const Duration(seconds: 1),
+        ),
       ),
     ],
   );

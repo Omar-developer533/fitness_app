@@ -32,7 +32,7 @@ class WorkoutCubit extends Cubit<WorkoutState> {
     );
   }
 
-  void getExercise() {
+  void getWorkouts() {
     emit(GetWorkoutLoading());
     var get = workoutRepo.getExercise();
     get.fold(

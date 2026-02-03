@@ -1,11 +1,12 @@
 import 'package:fitness_app/core/utls/styles.dart';
+import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
 import 'package:flutter/material.dart';
 
 class MainExerciseCard extends StatelessWidget {
-  const MainExerciseCard({super.key, required this.title, this.titleStyle});
-  final String title;
-  final TextStyle? titleStyle;
+  const MainExerciseCard({super.key, this.titleStyle, required this.exercise});
 
+  final TextStyle? titleStyle;
+  final ExerciseModel exercise;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -37,7 +38,7 @@ class MainExerciseCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(title, style: Styles.semiBoldTextStyle24),
+                    Text(exercise.name!, style: Styles.semiBoldTextStyle24),
                     const SizedBox(height: 3),
                     Table(
                       columnWidths: const {
@@ -75,11 +76,17 @@ class MainExerciseCard extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const TableRow(
+                        TableRow(
                           children: [
                             Text('30 minutes', style: Styles.mediumTextStyle14),
-                            Text('115', style: Styles.mediumTextStyle14),
-                            Text('15', style: Styles.mediumTextStyle14),
+                            Text(
+                              exercise.sets.toString(),
+                              style: Styles.mediumTextStyle14,
+                            ),
+                            Text(
+                              exercise.reps.toString(),
+                              style: Styles.mediumTextStyle14,
+                            ),
                             Text('5', style: Styles.mediumTextStyle14),
                           ],
                         ),
@@ -90,6 +97,7 @@ class MainExerciseCard extends StatelessWidget {
               ),
               const SizedBox(width: 25),
               InkWell(
+                onTap: () {},
                 child: Text(
                   'Edit plan',
                   style: Styles.semiBoldTextStyle14.copyWith(

@@ -1,9 +1,10 @@
 import 'package:fitness_app/core/utls/styles.dart';
+import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
 import 'package:flutter/material.dart';
 
 class OtherExerciseCard extends StatelessWidget {
-  const OtherExerciseCard({super.key, required this.title, this.titleStyle});
-  final String title;
+  const OtherExerciseCard({super.key, this.titleStyle, required this.exercise});
+  final ExerciseModel exercise;
   final TextStyle? titleStyle;
 
   @override
@@ -37,7 +38,7 @@ class OtherExerciseCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(title, style: Styles.semiBoldTextStyle20),
+                    Text(exercise.name!, style: Styles.semiBoldTextStyle20),
                     const SizedBox(height: 3),
                     Table(
                       columnWidths: const {
@@ -75,11 +76,17 @@ class OtherExerciseCard extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const TableRow(
+                        TableRow(
                           children: [
                             Text('30 minutes', style: Styles.mediumTextStyle14),
-                            Text('115', style: Styles.mediumTextStyle14),
-                            Text('15', style: Styles.mediumTextStyle14),
+                            Text(
+                              exercise.sets.toString(),
+                              style: Styles.mediumTextStyle14,
+                            ),
+                            Text(
+                              exercise.reps.toString(),
+                              style: Styles.mediumTextStyle14,
+                            ),
                             Text('5', style: Styles.mediumTextStyle14),
                           ],
                         ),
