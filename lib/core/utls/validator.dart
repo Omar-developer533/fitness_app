@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
 abstract class Validators {
+  static String? weight(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Weight is required';
+    } else {
+      return null;
+    }
+  }
+
   static String? email(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email is Required';

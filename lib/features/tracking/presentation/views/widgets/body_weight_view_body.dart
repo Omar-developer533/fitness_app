@@ -1,10 +1,13 @@
 import 'package:fitness_app/constants.dart';
+import 'package:fitness_app/core/functions/linear_gradient.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/add_items.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/calender.dart';
+import 'package:fitness_app/features/tracking/presentation/views/widgets/custom_bar_chart.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_adding_card.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_goal_card.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,7 +23,7 @@ class BodyWeightViewBody extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-         const   SizedBox(height: 25),
+            const SizedBox(height: 25),
             CustomAppBar(
               padding: const EdgeInsets.symmetric(horizontal: 0),
               onPressed: () {
@@ -33,19 +36,23 @@ class BodyWeightViewBody extends StatelessWidget {
                 ),
               ),
             ),
-         const   SizedBox(height: 20),
-        const    Calender(),
-          const  SizedBox(height: 15),
-            SvgPicture.asset(chairty, height: 264, width: 356),
-          const  SizedBox(height: 15),
-        const    WeightGoalCard(),
-         const   SizedBox(height: 15),
+            const SizedBox(height: 20),
+            const Calender(),
+            const SizedBox(height: 25),
+
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.38,
+              child: const CustomBarChart(),
+            ),
+            const SizedBox(height: 15),
+            const WeightGoalCard(),
+            const SizedBox(height: 15),
             const Align(
               alignment: Alignment.centerLeft,
-              child:Text('Weekly weight log', style: Styles.mediumTextStyle16),
+              child: Text('Weekly weight log', style: Styles.mediumTextStyle16),
             ),
-          const  SizedBox(height: 7),
-         const   AddItems(text: 'Add new weight'),
+            const SizedBox(height: 10),
+            const AddItems(text: 'Add new weight'),
             WeightAddingCard(
               weekNumber: 'Week 9',
               weight: '130kg',
