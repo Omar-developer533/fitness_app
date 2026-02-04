@@ -5,6 +5,8 @@ import 'package:fitness_app/features/auth/presentation/views/log_in_view.dart';
 import 'package:fitness_app/features/auth/presentation/views/splash_view.dart';
 import 'package:fitness_app/features/home/presentation/views/home_view.dart';
 import 'package:fitness_app/features/plans/presentation/views/create_plan_view.dart';
+import 'package:fitness_app/features/tracking/data/repos/tracking_repo.dart';
+import 'package:fitness_app/features/tracking/presentation/manager/cubits/weight/weight_cubit.dart';
 import 'package:fitness_app/features/tracking/presentation/views/body_weight_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/calorie_tracking_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/goal_view.dart';
@@ -118,12 +120,15 @@ abstract class AppRouter {
       GoRoute(
         path: kBodyWeightView,
         pageBuilder: (context, state) => CustomTransitionPage(
-          child: const BodyWeightView(),
+          child: BlocProvider(
+            create: (context) => WeightCubit(TrackingRepoImpl()),
+            child: const BodyWeightView(),
+          ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },
-          reverseTransitionDuration: Duration(seconds: 1),
-          transitionDuration: Duration(seconds: 1),
+          reverseTransitionDuration: const Duration(seconds: 1),
+          transitionDuration: const Duration(seconds: 1),
         ),
       ),
       GoRoute(
@@ -155,8 +160,8 @@ abstract class AppRouter {
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },
-          reverseTransitionDuration: Duration(seconds: 1),
-          transitionDuration: Duration(seconds: 1),
+          reverseTransitionDuration: const Duration(seconds: 1),
+          transitionDuration: const Duration(seconds: 1),
         ),
       ),
       GoRoute(
