@@ -1,7 +1,8 @@
 import 'package:fitness_app/core/utls/styles.dart';
-import 'package:fitness_app/core/utls/validator.dart';
+import 'package:fitness_app/features/tracking/presentation/manager/cubits/weight/weight_cubit.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/add_weight_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddItems extends StatefulWidget {
   const AddItems({super.key, required this.text});
@@ -40,26 +41,54 @@ class _AddItemsState extends State<AddItems> {
               const SizedBox(width: 25),
               Expanded(
                 flex: 2,
-                child: AddWeightFormField(textEditingController: textEditingController),
+                child: AddWeightFormField(
+                  textEditingController: textEditingController,
+                ),
               ),
-              IconButton(
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    autovalidateMode = AutovalidateMode.disabled;
-                    textEditingController.clear();
-                    FocusScope.of(context).unfocus();
-                    setState(() {});
-                  } else {
-                    autovalidateMode = AutovalidateMode.always;
-                    setState(() {});
+              BlocListener<WeightCubit, WeightState>(
+                listener: (context, state) {
+                  if (state is AddWeightSuccess) {
+                    customSnakBar(context, 'Add Weight Successflul');
+                    BlocProvider.of<WeightCubit>(context).getWeight();
+                  } else if (state is AddWeightFailure) {
+                    customSnakBar(context, state.failureMessage);
                   }
                 },
-                icon: const Icon(Icons.add, size: 28, color: Color(0xffFFA05C)),
+                child: IconButton(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      autovalidateMode = AutovalidateMode.disabled;
+
+                      FocusScope.of(context).unfocus();
+                      BlocProvider.of<WeightCubit>(
+                        context,
+                      ).addWeight(textEditingController.text);
+
+                      textEditingController.clear();
+
+                      setState(() {});
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  },
+                  icon: const Icon(
+                    Icons.add,
+                    size: 28,
+                    color: Color(0xffFFA05C),
+                  ),
+                ),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  void customSnakBar(BuildContext context, String text) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(text), backgroundColor: Colors.deepOrangeAccent),
     );
   }
 }

@@ -34,8 +34,8 @@ class WeightAddingCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(weekNumber, style: Styles.mediumTextStyle16),
-              Text(weight, style: Styles.semiBoldTextStyle16),
+              Text('Week $weekNumber', style: Styles.mediumTextStyle16),
+              Text('${weight}kg', style: Styles.semiBoldTextStyle16),
               IconButton(
                 onPressed: onPressed,
                 icon: const Icon(Icons.edit, color: Color(0xffFFA05C)),

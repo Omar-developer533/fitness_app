@@ -2,19 +2,29 @@ import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/functions/linear_gradient.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
+import 'package:fitness_app/features/tracking/presentation/manager/cubits/weight/weight_cubit.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/add_items.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/calender.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/custom_bar_chart.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_adding_card.dart';
 import 'package:fitness_app/features/tracking/presentation/views/widgets/weight_goal_card.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class BodyWeightViewBody extends StatelessWidget {
+class BodyWeightViewBody extends StatefulWidget {
   const BodyWeightViewBody({super.key});
+
+  @override
+  State<BodyWeightViewBody> createState() => _BodyWeightViewBodyState();
+}
+
+class _BodyWeightViewBodyState extends State<BodyWeightViewBody> {
+  @override
+  void initState() {
+    BlocProvider.of<WeightCubit>(context).getWeight();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,25 +63,28 @@ class BodyWeightViewBody extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             const AddItems(text: 'Add new weight'),
-            WeightAddingCard(
-              weekNumber: 'Week 9',
-              weight: '130kg',
-              onPressed: () {},
-            ),
-            WeightAddingCard(
-              weekNumber: 'Week 8',
-              weight: '140kg',
-              onPressed: () {},
-            ),
-            WeightAddingCard(
-              weekNumber: 'Week 7',
-              weight: '145kg',
-              onPressed: () {},
-            ),
-            WeightAddingCard(
-              weekNumber: 'Week 6',
-              weight: '150kg',
-              onPressed: () {},
+            const SizedBox(height: 15),
+            BlocBuilder<WeightCubit, WeightState>(
+              builder: (context, state) {
+                if (state is GetWeightSuccess) {
+                  return Column(
+                    verticalDirection: VerticalDirection.up,
+                    children: List.generate(state.weights.length, (index) {
+                      return WeightAddingCard(
+                        weekNumber: (index + 1).toString(),
+                        weight: state.weights[index],
+                        onPressed: () {},
+                      );
+                    }),
+                  );
+                } else if (state is GetWeightFailure) {
+                  return Center(child: Text(state.failureMessage));
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(color: buttonColorStart),
+                  );
+                }
+              },
             ),
             const SizedBox(height: 50),
           ],

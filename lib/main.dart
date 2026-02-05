@@ -10,6 +10,8 @@ void main() async {
   Hive.registerAdapter(ExerciseModelAdapter());
   await Hive.openBox<ExerciseModel>(exerciseBox);
   await Hive.openBox<String>(weightBox);
+  // var box = Hive.box<String>(weightBox);
+  // await box.clear();
   runApp(const FitnessApp());
 }
 
