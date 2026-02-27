@@ -135,8 +135,10 @@ class _RegularExerciseSectionState extends State<RegularExerciseSection> {
               return CustomButton(
                 onTap: () {
                   workoutCubit.name = excersiceController.text;
+                  excersiceController.clear();
                   workoutCubit.type = 'Main';
                   workoutCubit.addWokout();
+                  FocusScope.of(context).unfocus();
                 },
                 text: 'Create workout',
                 padding: EdgeInsets.zero,

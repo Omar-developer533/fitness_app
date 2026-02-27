@@ -1,4 +1,3 @@
-
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/app_router.dart';
 import 'package:fitness_app/core/functions/linear_gradient.dart';
@@ -23,15 +22,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     );
-    fadingAnimation =  Tween<double>(
+    fadingAnimation = Tween<double>(
       begin: 0,
       end: 1,
     ).animate(animationController);
     slidingAnimation = Tween<Offset>(
-      begin: Offset(0, 10),
-      end: Offset(0, 0),
+      begin: const Offset(0, 10),
+      end: const Offset(0, 0),
     ).animate(animationController);
 
     animationController.forward();
@@ -49,7 +48,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-     const   Spacer(flex: 2),
+        const Spacer(flex: 2),
         FadeTransition(
           opacity: fadingAnimation,
           child: Center(
@@ -57,24 +56,26 @@ class _SplashViewBodyState extends State<SplashViewBody>
           ),
         ),
 
-     const   Text('Helios Sports Tech', style: Styles.boldTextStyle28),
+        const Text('Helios Sports Tech', style: Styles.boldTextStyle28),
         SlideTransition(
           position: slidingAnimation,
           child: Text(
             'Here To Compete',
-            style: Styles.mediumTextStyle16.copyWith(color: Color(0xffC0C0C0)),
+            style: Styles.mediumTextStyle16.copyWith(
+              color: const Color(0xffC0C0C0),
+            ),
           ),
         ),
-      const  Spacer(flex: 4),
+        const Spacer(flex: 4),
         CustomButton(
           onTap: () {
-            GoRouter.of(context).go(AppRouter.kLogInView);
+            GoRouter.of(context).go(AppRouter.kExerciseListView);
           },
           gradient: linearGradient(buttonColorStart, buttonColorEnd),
           text: 'Get started',
           style: Styles.boldTextStyle16.copyWith(color: Colors.white),
         ),
-    const    Spacer(flex: 1),
+        const Spacer(flex: 1),
       ],
     );
   }

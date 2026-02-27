@@ -14,6 +14,7 @@ import 'package:fitness_app/features/tracking/presentation/views/metrics_view.da
 import 'package:fitness_app/features/workout/data/repos/wourkout_repo.dart';
 import 'package:fitness_app/features/workout/presentation/manager/cubits/exercise_type_cubit/exercise_type_cubit.dart';
 import 'package:fitness_app/features/workout/presentation/views/creat_exercise_view.dart';
+import 'package:fitness_app/features/workout/presentation/views/exercise_list_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/time_under_tension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,6 +32,7 @@ abstract class AppRouter {
   static const kCalorieTrackingView = '/calorieTrackingView';
   static const kTimeUnderTensionView = '/timeUnderTension';
   static const kCreatePlaneView = '/createPlanView';
+  static const kExerciseListView = '/exerciseListView';
 
   static final router = GoRouter(
     routes: [
@@ -134,7 +136,10 @@ abstract class AppRouter {
       GoRoute(
         path: kCalorieTrackingView,
         pageBuilder: (context, state) => CustomTransitionPage(
-          child: const CalorieTrackingView(),
+          child: BlocProvider(
+            create: (context) => WeightCubit(TrackingRepoImpl()),
+            child: const CalorieTrackingView(),
+          ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },
@@ -197,6 +202,10 @@ abstract class AppRouter {
           reverseTransitionDuration: const Duration(seconds: 1),
           transitionDuration: const Duration(seconds: 1),
         ),
+      ),
+      GoRoute(
+        path: kExerciseListView,
+        builder: (context, state) => const ExerciseListView(),
       ),
     ],
   );
