@@ -14,6 +14,7 @@ import 'package:fitness_app/features/tracking/presentation/views/metrics_view.da
 import 'package:fitness_app/features/workout/data/repos/wourkout_repo.dart';
 import 'package:fitness_app/features/workout/presentation/manager/cubits/exercise_type_cubit/exercise_type_cubit.dart';
 import 'package:fitness_app/features/workout/presentation/views/creat_exercise_view.dart';
+import 'package:fitness_app/features/workout/presentation/views/exercise_details_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/exercise_list_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/time_under_tension.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
+  static const kExerciseDetailsView = '/exerciseDetailsView';
   static const kCreateExerciseView = '/createExercisePart1';
   static const kGoalView = '/goalview';
   static const kHomeView = '/homeView';
@@ -206,6 +208,10 @@ abstract class AppRouter {
       GoRoute(
         path: kExerciseListView,
         builder: (context, state) => const ExerciseListView(),
+      ),
+      GoRoute(
+        path: kExerciseDetailsView,
+        builder: (context, state) => const ExerciseDetailsView(),
       ),
     ],
   );

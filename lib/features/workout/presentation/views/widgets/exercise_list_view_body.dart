@@ -6,6 +6,7 @@ import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/core/widget/custom_text_field.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_app_bar.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_list_view_item.dart';
+import 'package:fitness_app/features/workout/presentation/views/widgets/exercises_list.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/filtering_exercises.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/network_state_banner.dart';
 import 'package:flutter/material.dart';
@@ -47,24 +48,6 @@ class ExerciseListViewBody extends StatelessWidget {
           SliverFillRemaining(child: ExercisesList()),
         ],
       ),
-    );
-  }
-}
-
-class ExercisesList extends StatelessWidget {
-  const ExercisesList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 12.0),
-          child: ExerciseListViewItem(),
-        );
-      },
     );
   }
 }
