@@ -42,7 +42,7 @@ class _CreateAccountPart1BodyState extends State<CreateAccountPart1Body> {
               },
             ),
             const SizedBox(height: 29.1),
-           const Text('Create an Account', style: Styles.semiBoldTextStyle24),
+            const Text('Create an Account', style: Styles.semiBoldTextStyle24),
             Text(
               'Help us finish setting up your account.',
               style: Styles.mediumTextStyle14.copyWith(
@@ -145,7 +145,7 @@ class _CreateAccountPart1BodyState extends State<CreateAccountPart1Body> {
                 }
               },
             ),
-           const SizedBox(height: 50),
+            const SizedBox(height: 50),
           ],
         ),
       ),

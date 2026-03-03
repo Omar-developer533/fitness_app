@@ -7,9 +7,9 @@ class Logo extends StatelessWidget {
   final double? width;
   @override
   Widget build(BuildContext context) {
-    return  Center(
+    return Center(
       child: Image.asset(
-         kLogoImage,
+        kLogoImage,
         height: height ?? 37.9,
         width: width ?? 32,
       ),

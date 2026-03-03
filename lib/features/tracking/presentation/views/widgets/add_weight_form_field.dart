@@ -1,12 +1,8 @@
-
 import 'package:fitness_app/core/utls/validator.dart';
 import 'package:flutter/material.dart';
 
 class AddWeightFormField extends StatelessWidget {
-  const AddWeightFormField({
-    super.key,
-    required this.textEditingController,
-  });
+  const AddWeightFormField({super.key, required this.textEditingController});
 
   final TextEditingController textEditingController;
 

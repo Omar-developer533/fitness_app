@@ -7,6 +7,11 @@ class ExerciseDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.transparent,body: SafeArea(child: AppGradientBackground(child: ExerciseDetailsViewBody())),);
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: SafeArea(
+        child: AppGradientBackground(child: ExerciseDetailsViewBody()),
+      ),
+    );
   }
 }

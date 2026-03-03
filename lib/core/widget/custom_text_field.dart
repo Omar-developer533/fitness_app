@@ -15,7 +15,8 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.keyboardType,
     this.controller,
-    this.color, this.borderColor,
+    this.color,
+    this.borderColor,
   });
   final Color? borderColor;
   final TextEditingController? controller;

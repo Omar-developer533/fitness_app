@@ -1,13 +1,10 @@
-
 import 'package:fitness_app/core/manager/workout_cubit/workout_cubit.dart';
 import 'package:fitness_app/features/plans/presentation/views/widgets/main_exercise_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainExercisesSection extends StatelessWidget {
-  const MainExercisesSection({
-    super.key,
-  });
+  const MainExercisesSection({super.key});
 
   @override
   Widget build(BuildContext context) {

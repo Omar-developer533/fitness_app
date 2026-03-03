@@ -1,5 +1,3 @@
-
-
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,7 +7,8 @@ class MetricTypeCard extends StatelessWidget {
     super.key,
     required this.icon,
     required this.title,
-    required this.subTitle, this.onTap,
+    required this.subTitle,
+    this.onTap,
   });
   final String icon;
   final String title;

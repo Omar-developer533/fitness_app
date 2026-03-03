@@ -32,14 +32,14 @@ class WelcomCard extends StatelessWidget {
               children: [
                 const Row(
                   children: [
-                 Logo(height: 16, width: 13.93),
+                    Logo(height: 16, width: 13.93),
                     SizedBox(width: 3),
-                 Text(' Helios', style: Styles.semiBoldTextStyle12),
+                    Text(' Helios', style: Styles.semiBoldTextStyle12),
                   ],
                 ),
                 const SizedBox(height: 3),
-             const   Text('Welcome back,', style: Styles.semiBoldTextStyle20),
-              const  Text('Nick!', style: Styles.semiBoldTextStyle20),
+                const Text('Welcome back,', style: Styles.semiBoldTextStyle20),
+                const Text('Nick!', style: Styles.semiBoldTextStyle20),
                 const SizedBox(height: 3),
                 Container(
                   decoration: BoxDecoration(
@@ -54,7 +54,7 @@ class WelcomCard extends StatelessWidget {
                         horizontal: 10,
                         vertical: 5,
                       ),
-                      child:Text(
+                      child: Text(
                         'Try Premium Now',
                         style: Styles.regularTextStyle10,
                       ),

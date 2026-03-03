@@ -44,7 +44,7 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
               },
             ),
             const SizedBox(height: 29.1),
-        const    Text('Create an Account', style: Styles.semiBoldTextStyle24),
+            const Text('Create an Account', style: Styles.semiBoldTextStyle24),
             Text(
               'Help us finish setting up your account.',
               style: Styles.mediumTextStyle14.copyWith(
@@ -61,7 +61,7 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
                     text: ' Account information',
                     iconNumber: oneIcon,
                   ),
-                 const SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   InformationType(
                     iconNumber: towOrangeIcon,
                     text: ' Biodata information',
@@ -116,7 +116,7 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
                 hintText: 'Select a date',
                 suffixIcon: IconButton(
                   onPressed: () {},
-                  icon:const Icon(Icons.keyboard_arrow_down, size: 16),
+                  icon: const Icon(Icons.keyboard_arrow_down, size: 16),
                 ),
               ),
             ),
@@ -127,11 +127,11 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
                 controller: locationController,
                 onChanged: (value) {},
                 validator: Validators.location,
-                prefixIcon:const Icon(Icons.location_on, size: 16),
+                prefixIcon: const Icon(Icons.location_on, size: 16),
                 hintText: 'Select a location',
                 suffixIcon: IconButton(
                   onPressed: () {},
-                  icon:const Icon(Icons.keyboard_arrow_down, size: 16),
+                  icon: const Icon(Icons.keyboard_arrow_down, size: 16),
                 ),
               ),
             ),
@@ -145,7 +145,7 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
                 hintText: 'Select city in your location',
                 suffixIcon: IconButton(
                   onPressed: () {},
-                  icon:const Icon(Icons.keyboard_arrow_down, size: 16),
+                  icon: const Icon(Icons.keyboard_arrow_down, size: 16),
                 ),
               ),
             ),
@@ -168,11 +168,10 @@ class _CreateAccountPart2BodyState extends State<CreateAccountPart2Body> {
                 }
               },
             ),
-          const  SizedBox(height: 70),
+            const SizedBox(height: 70),
           ],
         ),
       ),
     );
-    
   }
 }

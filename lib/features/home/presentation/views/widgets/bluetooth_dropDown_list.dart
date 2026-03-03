@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class BluetoothDropdownList extends StatelessWidget {
   final Function(String) onItemSelected;
 
-const  BluetoothDropdownList({super.key, required this.onItemSelected});
+  const BluetoothDropdownList({super.key, required this.onItemSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ const  BluetoothDropdownList({super.key, required this.onItemSelected});
             ListTile(
               horizontalTitleGap: 2,
               leading: SvgPicture.asset(connectIcon, height: 20, width: 20),
-              title:const Text(
+              title: const Text(
                 'Tavon’s fitbit',
                 style: Styles.mediumTextStyle14,
                 maxLines: 1,
@@ -53,7 +53,7 @@ const  BluetoothDropdownList({super.key, required this.onItemSelected});
             ListTile(
               horizontalTitleGap: 2,
               leading: SvgPicture.asset(connectIcon, height: 20, width: 20),
-              title:const Text(
+              title: const Text(
                 'AppleWat...',
                 style: Styles.mediumTextStyle14,
                 maxLines: 1,
@@ -79,7 +79,7 @@ const  BluetoothDropdownList({super.key, required this.onItemSelected});
             ListTile(
               horizontalTitleGap: 2,
               leading: SvgPicture.asset(connectIcon, height: 20, width: 20),
-              title:const Text(
+              title: const Text(
                 'Tavon’s fitbit',
                 style: Styles.mediumTextStyle14,
                 maxLines: 1,

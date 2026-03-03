@@ -95,7 +95,7 @@ class WorkoutCards extends StatelessWidget {
                             ),
                           ],
                         ),
-                      const  TableRow(
+                        const TableRow(
                           children: [
                             Text('30 minutes', style: Styles.mediumTextStyle14),
                             Text('115', style: Styles.mediumTextStyle14),

@@ -9,7 +9,9 @@ class TimeUnderTension extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.transparent,
-      body: SafeArea(child: AppGradientBackground(child: TimeUnderTensionBody())),
+      body: SafeArea(
+        child: AppGradientBackground(child: TimeUnderTensionBody()),
+      ),
     );
   }
 }

@@ -58,12 +58,12 @@ class _CreatePlanViewBodyState extends State<CreatePlanViewBody> {
                 SizedBox(height: 10),
                 CustomSearchBar(),
                 SizedBox(height: 20),
-              
-               
               ],
             ),
-          ),  OtherExercisesSection(),
-        SliverToBoxAdapter(child: CreatePalnEndSection()), ],
+          ),
+          OtherExercisesSection(),
+          SliverToBoxAdapter(child: CreatePalnEndSection()),
+        ],
       ),
     );
   }

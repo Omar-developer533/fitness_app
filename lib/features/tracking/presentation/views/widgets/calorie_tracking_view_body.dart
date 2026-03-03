@@ -33,13 +33,16 @@ class CalorieTrackingViewBody extends StatelessWidget {
                 ),
               ),
             ),
-        const    CustomCircularIndicator(),
-         const   SizedBox(height: 10),
+            const CustomCircularIndicator(),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(calorieWhit, height: 50, width: 46),
-                const Text('Total Calories burned', style: Styles.mediumTextStyle20),
+                const Text(
+                  'Total Calories burned',
+                  style: Styles.mediumTextStyle20,
+                ),
               ],
             ),
             Text(
@@ -48,14 +51,14 @@ class CalorieTrackingViewBody extends StatelessWidget {
                 color: const Color(0xffA1A1AA),
               ),
             ),
-         const   SizedBox(height: 20),
-          const  AddItems(text: 'Add calories'),
+            const SizedBox(height: 20),
+            const AddItems(text: 'Add calories'),
             Row(
               children: [
-              const  Text('This week', style: Styles.semiBoldTextStyle16),
+                const Text('This week', style: Styles.semiBoldTextStyle16),
                 IconButton(
                   onPressed: () {},
-                  icon:const Icon(
+                  icon: const Icon(
                     Icons.arrow_drop_down,
                     color: Colors.white,
                     size: 24,
@@ -63,7 +66,7 @@ class CalorieTrackingViewBody extends StatelessWidget {
                 ),
               ],
             ),
-         const   CalorieCard(
+            const CalorieCard(
               color: Color(0xffFFA05C),
               day: 'Today:',
               calNum: '150',
@@ -71,14 +74,14 @@ class CalorieTrackingViewBody extends StatelessWidget {
               repsNumber: '10/10',
               exerciseName: 'Push ups',
             ),
-         const   CalorieCard(
+            const CalorieCard(
               day: 'Tuesday:',
               percent: 0.4,
               calNum: '85',
               repsNumber: '7/10',
               exerciseName: 'Squats',
             ),
-         const   CalorieCard(
+            const CalorieCard(
               day: 'Monday',
               percent: 0.5,
               calNum: '165',

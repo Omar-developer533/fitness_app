@@ -73,7 +73,10 @@ class CalorieCard extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(calNum, style: Styles.semiBoldTextStyle16),
-                              const Text('cal', style: Styles.mediumTextStyle12),
+                              const Text(
+                                'cal',
+                                style: Styles.mediumTextStyle12,
+                              ),
                             ],
                           ),
                         ),
@@ -86,7 +89,10 @@ class CalorieCard extends StatelessWidget {
               ),
               Column(
                 children: [
-                  const Text('Reps completed:', style: Styles.mediumTextStyle14),
+                  const Text(
+                    'Reps completed:',
+                    style: Styles.mediumTextStyle14,
+                  ),
                   const SizedBox(height: 10),
                   Text(repsNumber, style: Styles.semiBoldTextStyle16),
                 ],

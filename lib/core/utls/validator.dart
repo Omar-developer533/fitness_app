@@ -1,4 +1,3 @@
-
 abstract class Validators {
   static String? weight(String? value) {
     if (value == null || value.isEmpty) {
