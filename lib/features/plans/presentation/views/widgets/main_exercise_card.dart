@@ -1,12 +1,12 @@
 import 'package:fitness_app/core/utls/styles.dart';
-import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
+import 'package:fitness_app/features/workout/data/models/wourkout_model.dart';
 import 'package:flutter/material.dart';
 
 class MainExerciseCard extends StatelessWidget {
   const MainExerciseCard({super.key, this.titleStyle, required this.exercise});
 
   final TextStyle? titleStyle;
-  final ExerciseModel exercise;
+  final WourkoutModel exercise;
   @override
   Widget build(BuildContext context) {
     return Padding(

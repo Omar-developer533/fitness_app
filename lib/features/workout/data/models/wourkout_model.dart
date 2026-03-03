@@ -1,8 +1,8 @@
 import 'package:hive/hive.dart';
-part 'exercise_model.g.dart';
+part 'wourkout_model.g.dart';
 
 @HiveType(typeId: 0)
-class ExerciseModel extends HiveObject {
+class WourkoutModel extends HiveObject {
   @HiveField(0)
   String? type;
   @HiveField(1)
@@ -16,7 +16,7 @@ class ExerciseModel extends HiveObject {
   @HiveField(5)
   int? weight;
 
-  ExerciseModel({
+  WourkoutModel({
     this.type,
     this.name,
     this.sets,

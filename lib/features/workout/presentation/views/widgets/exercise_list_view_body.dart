@@ -45,7 +45,7 @@ class ExerciseListViewBody extends StatelessWidget {
               ],
             ),
           ),
-          SliverFillRemaining(child: ExercisesList()),
+          ExercisesList(),
         ],
       ),
     );

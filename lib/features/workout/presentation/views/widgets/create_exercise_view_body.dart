@@ -1,6 +1,6 @@
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
-import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
+import 'package:fitness_app/features/workout/data/models/wourkout_model.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_type.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/regualr_exercise_section.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/super_set_exercise_section.dart';
@@ -15,7 +15,7 @@ class CreateExerciseViewBody extends StatefulWidget {
 }
 
 class _CreateExerciseViewBodyState extends State<CreateExerciseViewBody> {
-  late ExerciseModel exerciseModel;
+  late WourkoutModel exerciseModel;
   List<IconData> icons = [
     Icons.autorenew,
     Icons.access_time_filled_rounded,

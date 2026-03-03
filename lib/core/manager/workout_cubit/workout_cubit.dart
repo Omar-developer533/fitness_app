@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
+import 'package:fitness_app/features/workout/data/models/wourkout_model.dart';
 import 'package:fitness_app/features/workout/data/repos/wourkout_repo.dart';
 import 'package:meta/meta.dart';
 
@@ -14,7 +14,7 @@ class WorkoutCubit extends Cubit<WorkoutState> {
   Future<void> addWokout() async {
     emit(AddWorkoutLoading());
     var add = await workoutRepo.addExercise(
-      ExerciseModel(
+      WourkoutModel(
         name: name,
         reps: reps,
         restTimer: timer,

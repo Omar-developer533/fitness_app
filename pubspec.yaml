@@ -33,6 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   datepicker_dropdown: ^1.0.1
+  dio: ^5.9.2
   fl_chart: ^1.1.1
   flutter:
     sdk: flutter

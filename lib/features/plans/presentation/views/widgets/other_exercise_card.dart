@@ -1,10 +1,10 @@
 import 'package:fitness_app/core/utls/styles.dart';
-import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
+import 'package:fitness_app/features/workout/data/models/wourkout_model.dart';
 import 'package:flutter/material.dart';
 
 class OtherExerciseCard extends StatelessWidget {
   const OtherExerciseCard({super.key, this.titleStyle, required this.exercise});
-  final ExerciseModel exercise;
+  final WourkoutModel exercise;
   final TextStyle? titleStyle;
 
   @override

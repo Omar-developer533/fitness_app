@@ -5,6 +5,7 @@ import 'package:fitness_app/features/workout/presentation/views/widgets/custom_i
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_name_section.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_steps_section.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ExerciseDetailsViewBody extends StatelessWidget {
   const ExerciseDetailsViewBody({super.key});
@@ -21,7 +22,9 @@ class ExerciseDetailsViewBody extends StatelessWidget {
               children: [
                 const SizedBox(height: 25),
                 CustomAppBar(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).pop();
+                  },
                   widget: Text(
                     'Exercise Details',
                     style: Styles.mediumTextStyle18.copyWith(

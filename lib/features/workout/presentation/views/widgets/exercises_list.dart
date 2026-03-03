@@ -8,8 +8,8 @@ class ExercisesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
+    return SliverList.builder(
+    
       itemCount: 10,
       itemBuilder: (context, index) {
         return Padding(

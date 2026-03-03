@@ -18,7 +18,7 @@ final class AddWorkoutFailure extends WorkoutState {
 final class GetWorkoutLoading extends WorkoutState {}
 
 final class GetWorkoutSuccess extends WorkoutState {
-  final List<ExerciseModel> exercises;
+  final List<WourkoutModel> exercises;
 
   GetWorkoutSuccess({required this.exercises});
 }
