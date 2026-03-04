@@ -1,6 +1,7 @@
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/features/auth/presentation/views/widgets/custom_app_bar.dart';
+import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/custom_image.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_name_section.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_steps_section.dart';
@@ -8,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ExerciseDetailsViewBody extends StatelessWidget {
-  const ExerciseDetailsViewBody({super.key});
-
+  const ExerciseDetailsViewBody({super.key, required this.exercise});
+  final ExerciseModel exercise;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,15 +35,15 @@ class ExerciseDetailsViewBody extends StatelessWidget {
                   padding: EdgeInsets.zero,
                 ),
                 const SizedBox(height: 20),
-                Center(child: const CustomImage()),
+                Center(child: CustomImage(image: exercise.gifUrl!)),
                 const SizedBox(height: 20),
-                const ExerciseNameSection(),
-                SizedBox(height: 20),
-                ExerciseStepsSection(),
-                SizedBox(height: 20),
-                TargetMusclesSection(),
-                SizedBox(height: 20),
-                EquipmentsSection(),
+                ExerciseNameSection(name: exercise.name ?? ''),
+                const SizedBox(height: 20),
+                ExerciseStepsSection(steps: exercise.instructions!),
+                const SizedBox(height: 20),
+                TargetMusclesSection(targetMuscles: exercise.targetMuscles!),
+                const SizedBox(height: 20),
+                EquipmentsSection(equipments: exercise.equipments!),
                 const SizedBox(height: 50),
               ],
             ),
@@ -54,8 +55,8 @@ class ExerciseDetailsViewBody extends StatelessWidget {
 }
 
 class TargetMusclesSection extends StatelessWidget {
-  const TargetMusclesSection({super.key});
-  final List<String> targetMuscles = const ['cardiovascular system'];
+  const TargetMusclesSection({super.key, required this.targetMuscles});
+  final List<String> targetMuscles;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -76,7 +77,7 @@ class TargetMusclesSection extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
@@ -96,13 +97,13 @@ class TargetMusclesSection extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: List.generate(
-                1,
+                targetMuscles.length,
                 (index) => Padding(
                   padding: const EdgeInsets.only(bottom: 12, left: 5),
                   child: Text(
                     targetMuscles[index],
                     style: Styles.regularTextStyle14.copyWith(
-                      color: Color(0xffA1A1AA),
+                      color: const Color(0xffA1A1AA),
                     ),
                   ),
                 ),
@@ -116,15 +117,15 @@ class TargetMusclesSection extends StatelessWidget {
 }
 
 class EquipmentsSection extends StatelessWidget {
-  const EquipmentsSection({super.key});
-  final List<String> equipments = const ['cardiovascular system'];
+  const EquipmentsSection({super.key, required this.equipments});
+  final List<String> equipments;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Equipments:', style: Styles.mediumTextStyle18),
-        SizedBox(height: 8),
+        const Text('Equipments:', style: Styles.mediumTextStyle18),
+        const SizedBox(height: 8),
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
@@ -144,13 +145,13 @@ class EquipmentsSection extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: List.generate(
-                1,
+                equipments.length,
                 (index) => Padding(
                   padding: const EdgeInsets.only(left: 5, bottom: 12),
                   child: Text(
                     equipments[index],
                     style: Styles.regularTextStyle14.copyWith(
-                      color: Color(0xffA1A1AA),
+                      color: const Color(0xffA1A1AA),
                     ),
                   ),
                 ),

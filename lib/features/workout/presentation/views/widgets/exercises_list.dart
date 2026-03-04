@@ -16,7 +16,9 @@ class ExercisesList extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 12.0),
           child: GestureDetector(
             onTap: () {
-              GoRouter.of(context).push(AppRouter.kExerciseDetailsView);
+              GoRouter.of(
+                context,
+              ).push(AppRouter.kExerciseDetailsView, extra: exercises[index]);
             },
             child: ExerciseListViewItem(exercise: exercises[index]),
           ),

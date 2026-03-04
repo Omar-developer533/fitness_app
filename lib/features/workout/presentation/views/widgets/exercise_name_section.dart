@@ -3,8 +3,8 @@ import 'package:fitness_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseNameSection extends StatelessWidget {
-  const ExerciseNameSection({super.key});
-
+  const ExerciseNameSection({super.key, required this.name});
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,7 +42,7 @@ class ExerciseNameSection extends StatelessWidget {
           ),
           child: Align(
             alignment: Alignment.center,
-            child: Text('Run', style: Styles.boldTextStyle16),
+            child: Text(name, style: Styles.boldTextStyle16),
           ),
         ),
       ],

@@ -2,14 +2,8 @@ import 'package:fitness_app/core/utls/styles.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseStepsSection extends StatelessWidget {
-  const ExerciseStepsSection({super.key});
-  final List<String> steps = const [
-    'Step:1 Attach a weight to one end of a rope or bar.',
-    'Step:1 Attach a weight to one end of a rope or bar.',
-    'Step:1 Attach a weight to one end of a rope or bar.',
-    'Step:1 Attach a weight to one end of a rope or bar.',
-    'Step:1 Attach a weight to one end of a rope or bar.',
-  ];
+  const ExerciseStepsSection({super.key, required this.steps});
+  final List<String> steps ;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,7 +29,7 @@ class ExerciseStepsSection extends StatelessWidget {
             padding: const EdgeInsets.only(right: 12, top: 12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: List.generate(5, (index) {
+              children: List.generate(steps.length, (index) {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 12, left: 5),
                   child: Text(

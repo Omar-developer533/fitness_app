@@ -11,6 +11,7 @@ import 'package:fitness_app/features/tracking/presentation/views/body_weight_vie
 import 'package:fitness_app/features/tracking/presentation/views/calorie_tracking_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/goal_view.dart';
 import 'package:fitness_app/features/tracking/presentation/views/metrics_view.dart';
+import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
 import 'package:fitness_app/features/workout/data/repos/wourkout_repo.dart';
 import 'package:fitness_app/features/workout/presentation/manager/cubits/exercise_type_cubit/exercise_type_cubit.dart';
 import 'package:fitness_app/features/workout/presentation/manager/cubits/exercises_list_cubit/exercise_list_cubit.dart';
@@ -215,7 +216,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kExerciseDetailsView,
-        builder: (context, state) => const ExerciseDetailsView(),
+        builder: (context, state) {
+          ExerciseModel exercise = state.extra as ExerciseModel;
+          return ExerciseDetailsView(exercise: exercise);
+        },
       ),
     ],
   );

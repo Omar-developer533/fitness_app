@@ -60,7 +60,7 @@ class WourkoutRepoImpl extends WorkoutRepo {
       } else {
         return right(
           ServerFailure(
-            errorMessage: 'oops ther was an error please try later',
+            errorMessage: e.toString(),
           ),
         );
       }

@@ -1,4 +1,6 @@
+import 'package:dio/dio.dart';
 import 'package:fitness_app/constants.dart';
+import 'package:fitness_app/core/utls/services/api_services.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/core/widget/custom_text_field.dart';
 import 'package:fitness_app/features/workout/presentation/manager/cubits/exercises_list_cubit/exercise_list_cubit.dart';
@@ -8,8 +10,22 @@ import 'package:fitness_app/features/workout/presentation/views/widgets/filterin
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ExerciseListViewBody extends StatelessWidget {
+class ExerciseListViewBody extends StatefulWidget {
   const ExerciseListViewBody({super.key});
+
+  @override
+  State<ExerciseListViewBody> createState() => _ExerciseListViewBodyState();
+}
+
+class _ExerciseListViewBodyState extends State<ExerciseListViewBody> {
+  @override
+  void initState() {
+    context.read<ExerciseListCubit>().getExercisesSortBy(
+      'targetMuscles',
+      ApiServices(dio: Dio()),
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +61,7 @@ class ExerciseListViewBody extends StatelessWidget {
           BlocBuilder<ExerciseListCubit, ExercisesListState>(
             builder: (context, state) {
               if (state is GetExercisesListFailure) {
-                return SliverToBoxAdapter(
+                return SliverFillRemaining(
                   child: Center(child: Text(state.errorMessage)),
                 );
               } else if (state is GetExercisesListSuccess) {

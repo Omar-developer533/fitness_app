@@ -3,12 +3,12 @@ import 'package:fitness_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomImage extends StatelessWidget {
-  const CustomImage({super.key});
-
+  const CustomImage({super.key, required this.image});
+  final String image;
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: 'https://static.exercisedb.dev/media/6FMU51h.gif',
+      imageUrl: image,
       placeholder: (context, url) =>
           CircularProgressIndicator(color: buttonColorEnd),
       errorWidget: (context, url, error) => Icon(Icons.error),

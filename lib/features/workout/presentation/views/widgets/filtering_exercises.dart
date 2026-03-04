@@ -1,5 +1,9 @@
+import 'package:dio/dio.dart';
+import 'package:fitness_app/core/utls/services/api_services.dart';
 import 'package:fitness_app/core/utls/styles.dart';
+import 'package:fitness_app/features/workout/presentation/manager/cubits/exercises_list_cubit/exercise_list_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FilteringExercise extends StatefulWidget {
   const FilteringExercise({super.key});
@@ -48,6 +52,10 @@ class _FilteringExerciseState extends State<FilteringExercise> {
       onChanged: (String? value) {
         setState(() {
           curruntItem = value!;
+          context.read<ExerciseListCubit>().getExercisesSortBy(
+            value,
+            ApiServices(dio: Dio()),
+          );
         });
       },
     );

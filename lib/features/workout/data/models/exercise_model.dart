@@ -23,11 +23,21 @@ class ExerciseModel {
     exerciseId: json['exerciseId'] as String?,
     name: json['name'] as String?,
     gifUrl: json['gifUrl'] as String?,
-    targetMuscles: json['targetMuscles'] as List<String>?,
-    bodyParts: json['bodyParts'] as List<String>?,
-    equipments: json['equipments'] as List<String>?,
-    secondaryMuscles: json['secondaryMuscles'] as List<String>?,
-    instructions: json['instructions'] as List<String>?,
+    targetMuscles: (json['targetMuscles'] as List<dynamic>?)
+        ?.map((e) => e.toString())
+        .toList(),
+    bodyParts: (json['bodyParts'] as List<dynamic>?)
+        ?.map((e) => e.toString())
+        .toList(),
+    equipments: (json['equipments'] as List<dynamic>?)
+        ?.map((e) => e.toString())
+        .toList(),
+    secondaryMuscles: (json['secondaryMuscles'] as List<dynamic>?)
+        ?.map((e) => e.toString())
+        .toList(),
+    instructions: (json['instructions'] as List<dynamic>?)
+        ?.map((e) => e.toString())
+        .toList(),
   );
 
   Map<String, dynamic> toJson() => {

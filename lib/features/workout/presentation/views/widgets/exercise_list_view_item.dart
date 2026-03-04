@@ -25,7 +25,9 @@ class ExerciseListViewItem extends StatelessWidget {
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         leading: CachedNetworkImage(
-          imageUrl: 'https://static.exercisedb.dev/media/5MRH8H2.gif',
+          imageUrl:
+              exercise.gifUrl ??
+              'https://static.exercisedb.dev/media/5MRH8H2.gif',
           placeholder: (context, url) =>
               CircularProgressIndicator(color: buttonColorEnd),
           errorWidget: (context, url, error) => Icon(Icons.error),
@@ -41,10 +43,15 @@ class ExerciseListViewItem extends StatelessWidget {
             );
           },
         ),
-        title: Text('run', style: Styles.semiBoldTextStyle16),
+        title: Text(
+          exercise.name!,
+          style: Styles.semiBoldTextStyle16,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 5.0),
-          child: Text('tis is exercise'),
+          child: Text(exercise.targetMuscles![0]),
         ),
         trailing: IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
       ),
