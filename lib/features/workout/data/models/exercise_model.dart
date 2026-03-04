@@ -1,11 +1,22 @@
-class ExerciseModel {
+import 'package:hive/hive.dart';
+part 'exercise_model.g.dart';
+@HiveType(typeId: 1)
+class ExerciseModel extends HiveObject {
+  @HiveField(0)
   String? exerciseId;
+  @HiveField(1)
   String? name;
+  @HiveField(2)
   String? gifUrl;
+  @HiveField(3)
   List<String>? targetMuscles;
+  @HiveField(4)
   List<String>? bodyParts;
+  @HiveField(5)
   List<String>? equipments;
+  @HiveField(6)
   List<String>? secondaryMuscles;
+  @HiveField(7)
   List<String>? instructions;
 
   ExerciseModel({

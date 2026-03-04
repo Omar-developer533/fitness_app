@@ -27,3 +27,4 @@ const whatIcon = 'assets/icons/what.svg';
 const searchIcon = 'assets/icons/searchIcon.svg';
 const exerciseBox = 'ExerciseBox';
 const weightBox = 'WeightBox';
+const favoriteExercises = 'favoriteExercises';
