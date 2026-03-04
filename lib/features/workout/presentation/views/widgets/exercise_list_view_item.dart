@@ -1,11 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness_app/constants.dart';
 import 'package:fitness_app/core/utls/styles.dart';
+import 'package:fitness_app/features/workout/data/models/exercise_model.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseListViewItem extends StatelessWidget {
-  const ExerciseListViewItem({super.key});
-
+  const ExerciseListViewItem({super.key, required this.exercise});
+  final ExerciseModel exercise;
   @override
   Widget build(BuildContext context) {
     return Container(

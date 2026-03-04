@@ -1,15 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:fitness_app/constants.dart';
-import 'package:fitness_app/core/functions/linear_gradient.dart';
 import 'package:fitness_app/core/utls/styles.dart';
 import 'package:fitness_app/core/widget/custom_text_field.dart';
+import 'package:fitness_app/features/workout/presentation/manager/cubits/exercises_list_cubit/exercise_list_cubit.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_app_bar.dart';
-import 'package:fitness_app/features/workout/presentation/views/widgets/exercise_list_view_item.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/exercises_list.dart';
 import 'package:fitness_app/features/workout/presentation/views/widgets/filtering_exercises.dart';
-import 'package:fitness_app/features/workout/presentation/views/widgets/network_state_banner.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ExerciseListViewBody extends StatelessWidget {
   const ExerciseListViewBody({super.key});
@@ -26,7 +23,7 @@ class ExerciseListViewBody extends StatelessWidget {
                 const SizedBox(height: 25),
                 const ExerciseAppBar(),
                 // const NetworkStateBanner(child: SizedBox()),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 CustomTextFormField(
                   hintText: 'Search Exercise',
                   suffixIcon: IconButton(
@@ -35,17 +32,33 @@ class ExerciseListViewBody extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                FilteringExercise(),
-                SizedBox(height: 35),
-                Align(
+                const FilteringExercise(),
+                const SizedBox(height: 35),
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: Text('Results :', style: Styles.mediumTextStyle18),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
               ],
             ),
           ),
-          ExercisesList(),
+          BlocBuilder<ExerciseListCubit, ExercisesListState>(
+            builder: (context, state) {
+              if (state is GetExercisesListFailure) {
+                return SliverToBoxAdapter(
+                  child: Center(child: Text(state.errorMessage)),
+                );
+              } else if (state is GetExercisesListSuccess) {
+                return ExercisesList(exercises: state.exercises);
+              } else {
+                return const SliverFillRemaining(
+                  child: Center(
+                    child: CircularProgressIndicator(color: buttonColorStart),
+                  ),
+                );
+              }
+            },
+          ),
         ],
       ),
     );

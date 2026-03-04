@@ -13,6 +13,7 @@ import 'package:fitness_app/features/tracking/presentation/views/goal_view.dart'
 import 'package:fitness_app/features/tracking/presentation/views/metrics_view.dart';
 import 'package:fitness_app/features/workout/data/repos/wourkout_repo.dart';
 import 'package:fitness_app/features/workout/presentation/manager/cubits/exercise_type_cubit/exercise_type_cubit.dart';
+import 'package:fitness_app/features/workout/presentation/manager/cubits/exercises_list_cubit/exercise_list_cubit.dart';
 import 'package:fitness_app/features/workout/presentation/views/creat_exercise_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/exercise_details_view.dart';
 import 'package:fitness_app/features/workout/presentation/views/exercise_list_view.dart';
@@ -207,7 +208,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kExerciseListView,
-        builder: (context, state) => const ExerciseListView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => ExerciseListCubit(WourkoutRepoImpl()),
+          child: const ExerciseListView(),
+        ),
       ),
       GoRoute(
         path: kExerciseDetailsView,
