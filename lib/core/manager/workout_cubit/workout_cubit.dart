@@ -13,7 +13,7 @@ class WorkoutCubit extends Cubit<WorkoutState> {
   String name = '', type = '';
   Future<void> addWokout() async {
     emit(AddWorkoutLoading());
-    var add = await workoutRepo.addExercise(
+    var add = await workoutRepo.addWorkout(
       WourkoutModel(
         name: name,
         reps: reps,
@@ -34,7 +34,7 @@ class WorkoutCubit extends Cubit<WorkoutState> {
 
   void getWorkouts() {
     emit(GetWorkoutLoading());
-    var get = workoutRepo.getExercise();
+    var get = workoutRepo.getWorkout();
     get.fold(
       (faier) {
         emit(GetWorkoutFailure(failureMessage: faier));
