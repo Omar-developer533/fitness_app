@@ -14,6 +14,8 @@ abstract class WorkoutRepo {
     ApiServices apiService,
     String sortBy,
   );
+  Future<Either<String, void>> addFavoriteExercise(ExerciseModel exercise);
+  Either<String, List<ExerciseModel>> getFavoriteExercises();
 }
 
 class WourkoutRepoImpl extends WorkoutRepo {
@@ -58,12 +60,32 @@ class WourkoutRepoImpl extends WorkoutRepo {
       if (e is DioException) {
         return right(ServerFailure.fromdioError(e));
       } else {
-        return right(
-          ServerFailure(
-            errorMessage: e.toString(),
-          ),
-        );
+        return right(ServerFailure(errorMessage: e.toString()));
       }
+    }
+  }
+
+  @override
+  Future<Either<String, void>> addFavoriteExercise(
+    ExerciseModel exercise,
+  ) async {
+    var favoriteExercisesBox = Hive.box<ExerciseModel>(favoriteExercises);
+    try {
+      await favoriteExercisesBox.add(exercise);
+      return right(null);
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
+
+  @override
+  Either<String, List<ExerciseModel>> getFavoriteExercises() {
+    var favoriteExercisesBox = Hive.box<ExerciseModel>(favoriteExercises);
+    try {
+      List<ExerciseModel> exercises = favoriteExercisesBox.values.toList();
+      return right(exercises);
+    } catch (e) {
+      return left(e.toString());
     }
   }
 }
